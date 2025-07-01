@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <i class="bi bi-car-front-fill"></i>
+                <span class="brand-text">RentCar</span>
+                <span class="admin-badge">Admin</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li class="menu-item active">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-car-front"></i>
+                        <span class="menu-text">Araçlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Araçlar</a></li>
+                        <li><a href="#">Yeni Araç Ekle</a></li>
+                        <li><a href="#">Araç Kategorileri</a></li>
+                        <li><a href="#">Bakım Takibi</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-calendar-check"></i>
+                        <span class="menu-text">Rezervasyonlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Aktif Rezervasyonlar</a></li>
+                        <li><a href="#">Tüm Rezervasyonlar</a></li>
+                        <li><a href="#">İptal Edilen</a></li>
+                        <li><a href="#">Bekleyen Onaylar</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-people"></i>
+                        <span class="menu-text">Müşteriler</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Müşteriler</a></li>
+                        <li><a href="#">Yeni Kayıtlar</a></li>
+                        <li><a href="#">VIP Müşteriler</a></li>
+                        <li><a href="#">Engellenmiş Hesaplar</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-currency-dollar"></i>
+                        <span class="menu-text">Finansal</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Gelir Raporu</a></li>
+                        <li><a href="#">Ödemeler</a></li>
+                        <li><a href="#">İadeler</a></li>
+                        <li><a href="#">Finansal Analiz</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-geo-alt"></i>
+                        <span class="menu-text">Lokasyonlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Ofisler</a></li>
+                        <li><a href="#">Yeni Ofis Ekle</a></li>
+                        <li><a href="#">Çalışma Saatleri</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-chart-bar"></i>
+                        <span class="menu-text">Raporlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Satış Raporu</a></li>
+                        <li><a href="#">Müşteri Analizi</a></li>
+                        <li><a href="#">Araç Kullanım</a></li>
+                        <li><a href="#">Performans</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-divider"></li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-gear"></i>
+                        <span class="menu-text">Ayarlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Genel Ayarlar</a></li>
+                        <li><a href="#">E-posta Şablonları</a></li>
+                        <li><a href="#">Ödeme Ayarları</a></li>
+                        <li><a href="#">Güvenlik</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-shield-check"></i>
+                        <span class="menu-text">Kullanıcılar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Admin Kullanıcılar</a></li>
+                        <li><a href="#">Roller & İzinler</a></li>
+                        <li><a href="#">Yeni Kullanıcı</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-life-preserver"></i>
+                        <span class="menu-text">Destek</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                        alt="Admin">
+                </div>
+                <div class="user-details">
+                    <span class="user-name">Admin User</span>
+                    <span class="user-role">Süper Admin</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <!-- Top Navbar -->
+        <header class="navbar-custom">
+            <div class="navbar-content">
+                <!-- Left Side - Breadcrumb -->
+                <div class="navbar-left">
+                    <button class="mobile-sidebar-toggle d-lg-none">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">
+                                    <i class="bi bi-house"></i>
+                                    Ana Sayfa
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Genel Bakış
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Right Side - Profile & Notifications -->
+                <div class="navbar-right">
+                    <!-- Notifications -->
+                    <div class="notification-dropdown">
+                        <button class="notification-btn" data-bs-toggle="dropdown">
+                            <i class="bi bi-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <ul class="dropdown-menu notification-menu">
+                            <li class="notification-header">
+                                <h6>Bildirimler</h6>
+                                <span class="badge bg-primary">3 Yeni</span>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-success">
+                                    <i class="bi bi-check-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Yeni Rezervasyon</h6>
+                                    <p>BMW 320i için yeni rezervasyon alındı</p>
+                                    <small>5 dakika önce</small>
+                                </div>
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-warning">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Bakım Hatırlatması</h6>
+                                    <p>Mercedes C180'in bakım zamanı geldi</p>
+                                    <small>2 saat önce</small>
+                                </div>
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-info">
+                                    <i class="bi bi-info-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Sistem Güncellemesi</h6>
+                                    <p>Yeni özellikler eklendi</p>
+                                    <small>1 gün önce</small>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="notification-footer">
+                                <a href="#">Tüm Bildirimleri Gör</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Profile Dropdown -->
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" data-bs-toggle="dropdown">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                alt="Profile" class="profile-avatar">
+                            <span class="profile-name">Admin User</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu profile-menu">
+                            <li class="profile-header">
+                                <div class="profile-info">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                        alt="Profile">
+                                    <div>
+                                        <h6>Admin User</h6>
+                                        <p>admin@rentcar.com</p>
+                                        <span class="role-badge">Süper Admin</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-person"></i>
+                                    Profilim
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-gear"></i>
+                                    Hesap Ayarları
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-bell"></i>
+                                    Bildirim Ayarları
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-shield-check"></i>
+                                    Güvenlik
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-question-circle"></i>
+                                    Yardım & Destek
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    Çıkış Yap
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Admin Profile Content -->
+                <div class="content-area">
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h1><i class="bi bi-person-circle text-primary me-2"></i>Profil Ayarları</h1>
+                            <p class="page-subtitle">Hesap bilgilerini ve ayarlarını yönet</p>
+                        </div>
+                        <div class="page-actions">
+                            <button class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-clockwise me-1"></i>Yenile
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="bi bi-check-circle me-1"></i>Değişiklikleri Kaydet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Content -->
+                    <div class="row g-4">
+                        <!-- Left Column - Profile Info -->
+                        <div class="col-lg-4">
+                            <!-- Profile Card -->
+                            <div class="admin-card">
+                                <div class="card-body text-center">
+                                    <div class="profile-avatar-section">
+                                        <div class="profile-avatar-large">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                                alt="Admin Profile">
+                                            <button class="avatar-upload-btn">
+                                                <i class="bi bi-camera"></i>
+                                            </button>
+                                        </div>
+                                        <h4 class="profile-name">Admin User</h4>
+                                        <p class="profile-email">admin@rentcar.com</p>
+                                        <div class="profile-badges">
+                                            <span class="badge bg-primary">Süper Admin</span>
+                                            <span class="badge bg-success">Aktif</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-graph-up text-primary me-2"></i>Hesap İstatistikleri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="stats-grid">
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-primary">
+                                                <i class="bi bi-calendar-check"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">152</span>
+                                                <span class="stat-label">Gün Aktif</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-success">
+                                                <i class="bi bi-shield-check"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">47</span>
+                                                <span class="stat-label">Onaylı İşlem</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-warning">
+                                                <i class="bi bi-clock"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">2.5h</span>
+                                                <span class="stat-label">Ortalama Oturum</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-info">
+                                                <i class="bi bi-people"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">324</span>
+                                                <span class="stat-label">Yönetilen Kullanıcı</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-clock-history text-primary me-2"></i>Son Aktiviteler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="activity-list">
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-success">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Rezervasyon #12345 onaylandı</p>
+                                                <small>2 saat önce</small>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-warning">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Sistem ayarları güncellendi</p>
+                                                <small>4 saat önce</small>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-info">
+                                                <i class="bi bi-person-plus"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Yeni kullanıcı eklendi</p>
+                                                <small>1 gün önce</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column - Profile Settings -->
+                        <div class="col-lg-8">
+                            <!-- Personal Information -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-person text-primary me-2"></i>Kişisel Bilgiler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form class="admin-form">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Ad *</label>
+                                                <input type="text" class="form-control" value="Admin" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Soyad *</label>
+                                                <input type="text" class="form-control" value="User" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">E-posta *</label>
+                                                <input type="email" class="form-control" value="admin@rentcar.com"
+                                                    required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Telefon</label>
+                                                <input type="tel" class="form-control" value="+90 532 123 45 67">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Pozisyon</label>
+                                                <input type="text" class="form-control" value="Sistem Yöneticisi"
+                                                    readonly>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Departman</label>
+                                                <select class="form-select">
+                                                    <option selected>Bilgi İşlem</option>
+                                                    <option>İnsan Kaynakları</option>
+                                                    <option>Operasyon</option>
+                                                    <option>Muhasebe</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Account Settings -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-gear text-primary me-2"></i>Hesap Ayarları</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <h6 class="setting-title">Güvenlik Ayarları</h6>
+                                            <div class="setting-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="twoFactor"
+                                                        checked>
+                                                    <label class="form-check-label" for="twoFactor">
+                                                        <strong>İki Faktörlü Doğrulama</strong>
+                                                        <small class="d-block text-muted">Hesap güvenliği için
+                                                            önerilir</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="setting-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="loginNotifications" checked>
+                                                    <label class="form-check-label" for="loginNotifications">
+                                                        <strong>Giriş Bildirimleri</strong>
+                                                        <small class="d-block text-muted">Yeni oturum açma
+                                                            uyarıları</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="setting-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="sessionTimeout">
+                                                    <label class="form-check-label" for="sessionTimeout">
+                                                        <strong>Otomatik Çıkış</strong>
+                                                        <small class="d-block text-muted">30 dakika hareketsizlik
+                                                            sonrası</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="setting-title">Bildirim Tercihleri</h6>
+                                            <div class="setting-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="emailNotifs"
+                                                        checked>
+                                                    <label class="form-check-label" for="emailNotifs">
+                                                        <strong>E-posta Bildirimleri</strong>
+                                                        <small class="d-block text-muted">Sistem uyarıları ve
+                                                            güncellemeler</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="setting-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="systemAlerts"
+                                                        checked>
+                                                    <label class="form-check-label" for="systemAlerts">
+                                                        <strong>Sistem Uyarıları</strong>
+                                                        <small class="d-block text-muted">Kritik sistem olayları</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="setting-item">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="weeklyReports">
+                                                    <label class="form-check-label" for="weeklyReports">
+                                                        <strong>Haftalık Raporlar</strong>
+                                                        <small class="d-block text-muted">Otomatik rapor
+                                                            gönderimi</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Permissions & Roles -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-shield-lock text-primary me-2"></i>Yetkiler ve Roller</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Ana Rol</label>
+                                            <select class="form-select" disabled>
+                                                <option selected>Süper Admin</option>
+                                            </select>
+                                            <small class="form-text text-muted">Ana rol değiştirilemez</small>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Ek Yetkiler</label>
+                                            <div class="permission-badges">
+                                                <span class="badge bg-success">Tüm Modüller</span>
+                                                <span class="badge bg-info">Kullanıcı Yönetimi</span>
+                                                <span class="badge bg-warning">Sistem Ayarları</span>
+                                                <span class="badge bg-primary">Raporlar</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="permissions-grid mt-3">
+                                        <h6 class="mb-3">Detaylı İzinler</h6>
+                                        <div class="row g-2">
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Araç Yönetimi</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Rezervasyon</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Müşteri Yönetimi</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Finansal Raporlar</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Sistem Ayarları</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Kullanıcı Yönetimi</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Lokasyon Yönetimi</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="permission-item">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Yedekleme & Restore</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security Actions -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-shield-exclamation text-warning me-2"></i>Güvenlik İşlemleri
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="security-action">
+                                                <h6>Şifre Değiştir</h6>
+                                                <p class="text-muted">Hesap güvenliği için düzenli şifre değişikliği
+                                                    önerilir</p>
+                                                <a href="#" class="btn btn-outline-primary">
+                                                    <i class="bi bi-key me-1"></i>Şifre Değiştir
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="security-action">
+                                                <h6>Aktif Oturumlar</h6>
+                                                <p class="text-muted">Diğer cihazlardaki aktif oturumları yönet</p>
+                                                <button class="btn btn-outline-warning">
+                                                    <i class="bi bi-devices me-1"></i>Oturumları Görüntüle
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
