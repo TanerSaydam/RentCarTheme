@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <i class="bi bi-car-front-fill"></i>
+                <span class="brand-text">RentCar</span>
+                <span class="admin-badge">Admin</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li class="menu-item active">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-car-front"></i>
+                        <span class="menu-text">Araçlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Araçlar</a></li>
+                        <li><a href="#">Yeni Araç Ekle</a></li>
+                        <li><a href="#">Araç Kategorileri</a></li>
+                        <li><a href="#">Bakım Takibi</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-calendar-check"></i>
+                        <span class="menu-text">Rezervasyonlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Aktif Rezervasyonlar</a></li>
+                        <li><a href="#">Tüm Rezervasyonlar</a></li>
+                        <li><a href="#">İptal Edilen</a></li>
+                        <li><a href="#">Bekleyen Onaylar</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-people"></i>
+                        <span class="menu-text">Müşteriler</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Müşteriler</a></li>
+                        <li><a href="#">Yeni Kayıtlar</a></li>
+                        <li><a href="#">VIP Müşteriler</a></li>
+                        <li><a href="#">Engellenmiş Hesaplar</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-currency-dollar"></i>
+                        <span class="menu-text">Finansal</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Gelir Raporu</a></li>
+                        <li><a href="#">Ödemeler</a></li>
+                        <li><a href="#">İadeler</a></li>
+                        <li><a href="#">Finansal Analiz</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-geo-alt"></i>
+                        <span class="menu-text">Lokasyonlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Ofisler</a></li>
+                        <li><a href="#">Yeni Ofis Ekle</a></li>
+                        <li><a href="#">Çalışma Saatleri</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-chart-bar"></i>
+                        <span class="menu-text">Raporlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Satış Raporu</a></li>
+                        <li><a href="#">Müşteri Analizi</a></li>
+                        <li><a href="#">Araç Kullanım</a></li>
+                        <li><a href="#">Performans</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-divider"></li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-gear"></i>
+                        <span class="menu-text">Ayarlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Genel Ayarlar</a></li>
+                        <li><a href="#">E-posta Şablonları</a></li>
+                        <li><a href="#">Ödeme Ayarları</a></li>
+                        <li><a href="#">Güvenlik</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-shield-check"></i>
+                        <span class="menu-text">Kullanıcılar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Admin Kullanıcılar</a></li>
+                        <li><a href="#">Roller & İzinler</a></li>
+                        <li><a href="#">Yeni Kullanıcı</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-life-preserver"></i>
+                        <span class="menu-text">Destek</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                        alt="Admin">
+                </div>
+                <div class="user-details">
+                    <span class="user-name">Admin User</span>
+                    <span class="user-role">Süper Admin</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <!-- Top Navbar -->
+        <header class="navbar-custom">
+            <div class="navbar-content">
+                <!-- Left Side - Breadcrumb -->
+                <div class="navbar-left">
+                    <button class="mobile-sidebar-toggle d-lg-none">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">
+                                    <i class="bi bi-house"></i>
+                                    Ana Sayfa
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Genel Bakış
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Right Side - Profile & Notifications -->
+                <div class="navbar-right">
+                    <!-- Notifications -->
+                    <div class="notification-dropdown">
+                        <button class="notification-btn" data-bs-toggle="dropdown">
+                            <i class="bi bi-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <ul class="dropdown-menu notification-menu">
+                            <li class="notification-header">
+                                <h6>Bildirimler</h6>
+                                <span class="badge bg-primary">3 Yeni</span>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-success">
+                                    <i class="bi bi-check-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Yeni Rezervasyon</h6>
+                                    <p>BMW 320i için yeni rezervasyon alındı</p>
+                                    <small>5 dakika önce</small>
+                                </div>
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-warning">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Bakım Hatırlatması</h6>
+                                    <p>Mercedes C180'in bakım zamanı geldi</p>
+                                    <small>2 saat önce</small>
+                                </div>
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-info">
+                                    <i class="bi bi-info-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Sistem Güncellemesi</h6>
+                                    <p>Yeni özellikler eklendi</p>
+                                    <small>1 gün önce</small>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="notification-footer">
+                                <a href="#">Tüm Bildirimleri Gör</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Profile Dropdown -->
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" data-bs-toggle="dropdown">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                alt="Profile" class="profile-avatar">
+                            <span class="profile-name">Admin User</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu profile-menu">
+                            <li class="profile-header">
+                                <div class="profile-info">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                        alt="Profile">
+                                    <div>
+                                        <h6>Admin User</h6>
+                                        <p>admin@rentcar.com</p>
+                                        <span class="role-badge">Süper Admin</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-person"></i>
+                                    Profilim
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-gear"></i>
+                                    Hesap Ayarları
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-bell"></i>
+                                    Bildirim Ayarları
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-shield-check"></i>
+                                    Güvenlik
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-question-circle"></i>
+                                    Yardım & Destek
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    Çıkış Yap
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Admin User Detail Content -->
+                <div class="content-area">
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h1><i class="bi bi-person-circle text-primary me-2"></i>Kullanıcı Detayı</h1>
+                            <p class="page-subtitle">Kullanıcı bilgilerini görüntüle ve yönet</p>
+                        </div>
+                        <div class="page-actions">
+                            <div class="status-badge">
+                                <span class="badge bg-success">ACTIVE</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-1"></i>Geri
+                            </a>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="bi bi-pencil me-1"></i>Düzenle
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-lock me-2"></i>Şifre
+                                            Sıfırla</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-ban me-2"></i>Hesabı
+                                            Dondur</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item text-danger" href="#"><i
+                                                class="bi bi-trash me-2"></i>Sil</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Detail Content -->
+                    <div class="row g-4">
+                        <!-- Main Details -->
+                        <div class="col-lg-8">
+                            <!-- Basic Information -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-person text-primary me-2"></i>Temel Bilgiler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <label class="detail-label">Ad</label>
+                                            <span class="detail-value">Test</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Soyad</label>
+                                            <span class="detail-value">User</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Kullanıcı Adı</label>
+                                            <span class="detail-value">test</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">E-posta</label>
+                                            <span class="detail-value">
+                                                <a href="mailto:test@test.com" class="detail-link">test@test.com</a>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Telefon</label>
+                                            <span class="detail-value">
+                                                <a href="tel:+905321234567" class="detail-link">+90 532 123 45 67</a>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Doğum Tarihi</label>
+                                            <span class="detail-value">15 Mart 1990</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Cinsiyet</label>
+                                            <span class="detail-value">Erkek</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Uyruk</label>
+                                            <span class="detail-value">Türkiye Cumhuriyeti</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-geo-alt text-primary me-2"></i>İletişim Bilgileri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item full-width">
+                                            <label class="detail-label">Adres</label>
+                                            <span class="detail-value">Cumhuriyet Mahallesi, Atatürk Caddesi No: 45/8,
+                                                Melikgazi/Kayseri</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Şehir</label>
+                                            <span class="detail-value">Kayseri</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">İlçe</label>
+                                            <span class="detail-value">Melikgazi</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Posta Kodu</label>
+                                            <span class="detail-value">38030</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Ülke</label>
+                                            <span class="detail-value">Türkiye</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Account Settings -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-gear text-primary me-2"></i>Hesap Ayarları</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <label class="detail-label">Hesap Durumu</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">Aktif</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">E-posta Doğrulandı</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">
+                                                    <i class="bi bi-check-circle me-1"></i>Doğrulandı
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Telefon Doğrulandı</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">
+                                                    <i class="bi bi-check-circle me-1"></i>Doğrulandı
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">İki Faktörlü Doğrulama</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-warning">
+                                                    <i class="bi bi-x-circle me-1"></i>Pasif
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Son Giriş</label>
+                                            <span class="detail-value">12 Haziran 2025, 14:30</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Giriş Sayısı</label>
+                                            <span class="detail-value">47 kez</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Dil Tercihi</label>
+                                            <span class="detail-value">Türkçe</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Para Birimi</label>
+                                            <span class="detail-value">TRY (₺)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- License Information -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-card-text text-primary me-2"></i>Ehliyet Bilgileri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <label class="detail-label">Ehliyet Numarası</label>
+                                            <span class="detail-value">ABC123456</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Ehliyet Sınıfı</label>
+                                            <span class="detail-value">B Sınıfı</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Alma Tarihi</label>
+                                            <span class="detail-value">20 Haziran 2005</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Geçerlilik Tarihi</label>
+                                            <span class="detail-value">20 Haziran 2030</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="col-lg-4">
+                            <!-- User Avatar & Quick Info -->
+                            <div class="admin-card">
+                                <div class="card-body text-center">
+                                    <div class="user-avatar-section">
+                                        <div class="user-avatar-large">
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                                alt="Test User">
+                                        </div>
+                                        <h4 class="user-name">Test User</h4>
+                                        <p class="user-email">test@test.com</p>
+                                        <div class="user-badges">
+                                            <span class="badge bg-primary">Premium Üye</span>
+                                            <span class="badge bg-success">Doğrulanmış</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Stats -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-bar-chart text-primary me-2"></i>Aktivite İstatistikleri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="stats-list">
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-primary">
+                                                <i class="bi bi-car"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">12</span>
+                                                <span class="stat-label">Toplam Kiralama</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-success">
+                                                <i class="bi bi-currency-dollar"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">18.450₺</span>
+                                                <span class="stat-label">Toplam Harcama</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-warning">
+                                                <i class="bi bi-star"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">4.8</span>
+                                                <span class="stat-label">Ortalama Puan</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-info">
+                                                <i class="bi bi-calendar"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">45</span>
+                                                <span class="stat-label">Toplam Gün</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-clock-history text-primary me-2"></i>Son Aktiviteler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="activity-timeline">
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-success">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Rezervasyon tamamlandı</p>
+                                                <small>BMW 320i - 2 saat önce</small>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-primary">
+                                                <i class="bi bi-car"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Yeni rezervasyon oluşturdu</p>
+                                                <small>Mercedes C180 - 1 gün önce</small>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-info">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Profil bilgilerini güncelledi</p>
+                                                <small>3 gün önce</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Actions -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-lightning text-primary me-2"></i>Hızlı İşlemler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="quick-actions">
+                                        <button class="btn btn-outline-primary w-100 mb-2">
+                                            <i class="bi bi-envelope me-2"></i>E-posta Gönder
+                                        </button>
+                                        <button class="btn btn-outline-warning w-100 mb-2">
+                                            <i class="bi bi-key me-2"></i>Şifre Sıfırla
+                                        </button>
+                                        <button class="btn btn-outline-info w-100 mb-2">
+                                            <i class="bi bi-car me-2"></i>Kiralama Geçmişi
+                                        </button>
+                                        <button class="btn btn-outline-danger w-100">
+                                            <i class="bi bi-ban me-2"></i>Hesabı Dondur
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Record Information Footer -->
+                    <div class="record-info-footer">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="record-info-card">
+                                    <div class="record-info-icon">
+                                        <i class="bi bi-pencil text-warning"></i>
+                                    </div>
+                                    <div class="record-info-content">
+                                        <label class="record-info-label">Modified By</label>
+                                        <div class="record-info-details">
+                                            <span class="record-info-user">System Admin (admin@admin.com)</span>
+                                            <span class="record-info-date">15 Apr 2025 23:18:40</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="record-info-card">
+                                    <div class="record-info-icon">
+                                        <i class="bi bi-plus-circle text-success"></i>
+                                    </div>
+                                    <div class="record-info-content">
+                                        <label class="record-info-label">Created By</label>
+                                        <div class="record-info-details">
+                                            <span class="record-info-user">System Admin (admin@admin.com)</span>
+                                            <span class="record-info-date">15 Apr 2025 23:17:18</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

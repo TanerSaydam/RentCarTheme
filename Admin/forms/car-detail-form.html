@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <i class="bi bi-car-front-fill"></i>
+                <span class="brand-text">RentCar</span>
+                <span class="admin-badge">Admin</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="sidebar-menu">
+                <li class="menu-item active">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-car-front"></i>
+                        <span class="menu-text">Araçlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Araçlar</a></li>
+                        <li><a href="#">Yeni Araç Ekle</a></li>
+                        <li><a href="#">Araç Kategorileri</a></li>
+                        <li><a href="#">Bakım Takibi</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-calendar-check"></i>
+                        <span class="menu-text">Rezervasyonlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Aktif Rezervasyonlar</a></li>
+                        <li><a href="#">Tüm Rezervasyonlar</a></li>
+                        <li><a href="#">İptal Edilen</a></li>
+                        <li><a href="#">Bekleyen Onaylar</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-people"></i>
+                        <span class="menu-text">Müşteriler</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Müşteriler</a></li>
+                        <li><a href="#">Yeni Kayıtlar</a></li>
+                        <li><a href="#">VIP Müşteriler</a></li>
+                        <li><a href="#">Engellenmiş Hesaplar</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-currency-dollar"></i>
+                        <span class="menu-text">Finansal</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Gelir Raporu</a></li>
+                        <li><a href="#">Ödemeler</a></li>
+                        <li><a href="#">İadeler</a></li>
+                        <li><a href="#">Finansal Analiz</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-geo-alt"></i>
+                        <span class="menu-text">Lokasyonlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Tüm Ofisler</a></li>
+                        <li><a href="#">Yeni Ofis Ekle</a></li>
+                        <li><a href="#">Çalışma Saatleri</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-chart-bar"></i>
+                        <span class="menu-text">Raporlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Satış Raporu</a></li>
+                        <li><a href="#">Müşteri Analizi</a></li>
+                        <li><a href="#">Araç Kullanım</a></li>
+                        <li><a href="#">Performans</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-divider"></li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-gear"></i>
+                        <span class="menu-text">Ayarlar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Genel Ayarlar</a></li>
+                        <li><a href="#">E-posta Şablonları</a></li>
+                        <li><a href="#">Ödeme Ayarları</a></li>
+                        <li><a href="#">Güvenlik</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-shield-check"></i>
+                        <span class="menu-text">Kullanıcılar</span>
+                        <i class="bi bi-chevron-right menu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Admin Kullanıcılar</a></li>
+                        <li><a href="#">Roller & İzinler</a></li>
+                        <li><a href="#">Yeni Kullanıcı</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="bi bi-life-preserver"></i>
+                        <span class="menu-text">Destek</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                        alt="Admin">
+                </div>
+                <div class="user-details">
+                    <span class="user-name">Admin User</span>
+                    <span class="user-role">Süper Admin</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <!-- Top Navbar -->
+        <header class="navbar-custom">
+            <div class="navbar-content">
+                <!-- Left Side - Breadcrumb -->
+                <div class="navbar-left">
+                    <button class="mobile-sidebar-toggle d-lg-none">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">
+                                    <i class="bi bi-house"></i>
+                                    Ana Sayfa
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Genel Bakış
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Right Side - Profile & Notifications -->
+                <div class="navbar-right">
+                    <!-- Notifications -->
+                    <div class="notification-dropdown">
+                        <button class="notification-btn" data-bs-toggle="dropdown">
+                            <i class="bi bi-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <ul class="dropdown-menu notification-menu">
+                            <li class="notification-header">
+                                <h6>Bildirimler</h6>
+                                <span class="badge bg-primary">3 Yeni</span>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-success">
+                                    <i class="bi bi-check-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Yeni Rezervasyon</h6>
+                                    <p>BMW 320i için yeni rezervasyon alındı</p>
+                                    <small>5 dakika önce</small>
+                                </div>
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-warning">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Bakım Hatırlatması</h6>
+                                    <p>Mercedes C180'in bakım zamanı geldi</p>
+                                    <small>2 saat önce</small>
+                                </div>
+                            </li>
+                            <li class="notification-item">
+                                <div class="notification-icon bg-info">
+                                    <i class="bi bi-info-circle"></i>
+                                </div>
+                                <div class="notification-content">
+                                    <h6>Sistem Güncellemesi</h6>
+                                    <p>Yeni özellikler eklendi</p>
+                                    <small>1 gün önce</small>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="notification-footer">
+                                <a href="#">Tüm Bildirimleri Gör</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Profile Dropdown -->
+                    <div class="profile-dropdown">
+                        <button class="profile-btn" data-bs-toggle="dropdown">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                alt="Profile" class="profile-avatar">
+                            <span class="profile-name">Admin User</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu profile-menu">
+                            <li class="profile-header">
+                                <div class="profile-info">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                        alt="Profile">
+                                    <div>
+                                        <h6>Admin User</h6>
+                                        <p>admin@rentcar.com</p>
+                                        <span class="role-badge">Süper Admin</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-person"></i>
+                                    Profilim
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-gear"></i>
+                                    Hesap Ayarları
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-bell"></i>
+                                    Bildirim Ayarları
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-shield-check"></i>
+                                    Güvenlik
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-question-circle"></i>
+                                    Yardım & Destek
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    Çıkış Yap
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Araç Detay Content -->
+                <div class="content-area">
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h1><i class="bi bi-car-front text-primary me-2"></i>Araç Detayı</h1>
+                            <p class="page-subtitle">Araç bilgilerini görüntüle ve yönet</p>
+                        </div>
+                        <div class="page-actions">
+                            <div class="status-badge">
+                                <span class="badge bg-success">AKTİF</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-1"></i>Geri
+                            </a>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="bi bi-pencil me-1"></i>Düzenle
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-camera me-2"></i>Fotoğraf
+                                            Yönetimi</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-wrench me-2"></i>Bakım Kaydı
+                                            Ekle</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="bi bi-eye-slash me-2"></i>Pasif
+                                            Yap</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item text-danger" href="#"><i
+                                                class="bi bi-trash me-2"></i>Sil</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Araç Detay Content -->
+                    <div class="row g-4">
+                        <!-- Ana Detaylar -->
+                        <div class="col-lg-8">
+                            <!-- Temel Bilgiler -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-info-circle text-primary me-2"></i>Temel Bilgiler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <label class="detail-label">Marka</label>
+                                            <span class="detail-value">BMW</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Model</label>
+                                            <span class="detail-value">320i</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Model Yılı</label>
+                                            <span class="detail-value">2023</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Renk</label>
+                                            <span class="detail-value">Alpine White</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Plaka</label>
+                                            <span class="detail-value">38 ABC 123</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Kategori</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-primary">Lüks</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">VIN Numarası</label>
+                                            <span class="detail-value">WBANU13557CT12345</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Motor Numarası</label>
+                                            <span class="detail-value">N20B20A-987654321</span>
+                                        </div>
+                                        <div class="detail-item full-width">
+                                            <label class="detail-label">Açıklama</label>
+                                            <span class="detail-value">Mükemmel durumda, tam donanım BMW 320i. Tüm
+                                                bakımları düzenli olarak yapılmış, hasar kaydı bulunmayan araç.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Teknik Özellikler -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-gear text-primary me-2"></i>Teknik Özellikler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <label class="detail-label">Yakıt Türü</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-info">Benzin</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Şanzıman</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-secondary">Otomatik</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Kişi Kapasitesi</label>
+                                            <span class="detail-value">5 Kişi</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Motor Hacmi</label>
+                                            <span class="detail-value">2.0L (1998 cc)</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Motor Gücü</label>
+                                            <span class="detail-value">184 HP</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Kilometre</label>
+                                            <span class="detail-value">25.680 km</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Çekiş Türü</label>
+                                            <span class="detail-value">Önden Çekiş</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Yakıt Tüketimi</label>
+                                            <span class="detail-value">6.8L/100km (Ortalama)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Özellikler & Donanım -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-stars text-primary me-2"></i>Özellikler & Donanım</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <h6 class="feature-group-title">Güvenlik Özellikleri</h6>
+                                            <div class="features-list">
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>6 Airbag</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>ABS Fren Sistemi</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>ESP Elektronik Stabilite</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Alarm Sistemi</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>İmmobilizer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="feature-group-title">Konfor Özellikleri</h6>
+                                            <div class="features-list">
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Dual Zone Klima</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Isıtmalı Koltuklar</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Elektrikli Camlar</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Merkezi Kilit</span>
+                                                </div>
+                                                <div class="feature-item inactive">
+                                                    <i class="bi bi-x-circle text-muted"></i>
+                                                    <span>Sunroof</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="feature-group-title">Sürüş Destekleri</h6>
+                                            <div class="features-list">
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>GPS Navigasyon</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Park Sensörü</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Geri Görüş Kamerası</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Cruise Control</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Lane Departure Warning</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="feature-group-title">Multimedya</h6>
+                                            <div class="features-list">
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>8.8" Dokunmatik Ekran</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Bluetooth Bağlantı</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>USB & AUX Girişi</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Apple CarPlay</span>
+                                                </div>
+                                                <div class="feature-item active">
+                                                    <i class="bi bi-check-circle text-success"></i>
+                                                    <span>Harman Kardon Ses</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fiyatlandırma & Lokasyon -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-currency-dollar text-primary me-2"></i>Fiyatlandırma & Lokasyon
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <label class="detail-label">Günlük Fiyat</label>
+                                            <span class="detail-value">
+                                                <span class="price-amount">650₺</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Haftalık İndirim</label>
+                                            <span class="detail-value">%15 (552₺/gün)</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Aylık İndirim</label>
+                                            <span class="detail-value">%25 (487₺/gün)</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Mevcut Lokasyon</label>
+                                            <span class="detail-value">
+                                                <i class="bi bi-geo-alt text-danger me-1"></i>
+                                                Kayseri Havalimanı
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Sigorta Türü</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">Tam Kasko</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Depozit</label>
+                                            <span class="detail-value">2.000₺</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Günlük KM Limiti</label>
+                                            <span class="detail-value">300 km</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Ekstra KM Ücreti</label>
+                                            <span class="detail-value">2₺/km</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Son Bakım Bilgileri -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-wrench text-primary me-2"></i>Bakım Bilgileri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="detail-grid">
+                                        <div class="detail-item">
+                                            <label class="detail-label">Son Bakım Tarihi</label>
+                                            <span class="detail-value">15 Mayıs 2025</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Son Bakım KM</label>
+                                            <span class="detail-value">24.850 km</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Sonraki Bakım</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-warning">35.000 km'de</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Muayene Tarihi</label>
+                                            <span class="detail-value">12 Mart 2026</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Sigorta Bitiş</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">08 Oca 2026</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Kasko Bitiş</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">08 Oca 2026</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Lastik Durumu</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">Çok İyi</span>
+                                            </span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <label class="detail-label">Genel Durum</label>
+                                            <span class="detail-value">
+                                                <span class="badge bg-success">Mükemmel</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sağ Kenar Çubuğu -->
+                        <div class="col-lg-4">
+                            <!-- Araç Fotoğrafı & Hızlı Bilgiler -->
+                            <div class="admin-card">
+                                <div class="card-body text-center">
+                                    <div class="car-image-section">
+                                        <div class="car-image-large">
+                                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=300&fit=crop"
+                                                alt="BMW 320i" class="img-fluid rounded">
+                                        </div>
+                                        <h4 class="car-name">BMW 320i</h4>
+                                        <p class="car-plate">38 ABC 123</p>
+                                        <div class="car-badges">
+                                            <span class="badge bg-success">Müsait</span>
+                                            <span class="badge bg-primary">Öne Çıkarılan</span>
+                                            <span class="badge bg-warning">Premium</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kiralama İstatistikleri -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-bar-chart text-primary me-2"></i>Kiralama İstatistikleri</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="stats-list">
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-primary">
+                                                <i class="bi bi-calendar-check"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">47</span>
+                                                <span class="stat-label">Toplam Kiralama</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-success">
+                                                <i class="bi bi-currency-dollar"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">28.650₺</span>
+                                                <span class="stat-label">Toplam Gelir</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-warning">
+                                                <i class="bi bi-star"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">4.9</span>
+                                                <span class="stat-label">Ortalama Puan</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-item">
+                                            <div class="stat-icon bg-info">
+                                                <i class="bi bi-percent"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <span class="stat-number">87%</span>
+                                                <span class="stat-label">Doluluk Oranı</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Son Rezervasyonlar -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-clock-history text-primary me-2"></i>Son Rezervasyonlar</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="activity-timeline">
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-success">
+                                                <i class="bi bi-check"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Rezervasyon tamamlandı</p>
+                                                <small>Mehmet Yılmaz - 3 gün önce</small>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-primary">
+                                                <i class="bi bi-calendar"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Yeni rezervasyon</p>
+                                                <small>Ayşe Kaya - 1 hafta önce</small>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-warning">
+                                                <i class="bi bi-wrench"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <p>Bakım tamamlandı</p>
+                                                <small>15 Mayıs 2025</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hızlı İşlemler -->
+                            <div class="admin-card">
+                                <div class="card-header">
+                                    <h6><i class="bi bi-lightning text-primary me-2"></i>Hızlı İşlemler</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="quick-actions">
+                                        <button class="btn btn-outline-primary w-100 mb-2">
+                                            <i class="bi bi-calendar-plus me-2"></i>Manuel Rezervasyon
+                                        </button>
+                                        <button class="btn btn-outline-warning w-100 mb-2">
+                                            <i class="bi bi-wrench me-2"></i>Bakım Kaydı Ekle
+                                        </button>
+                                        <button class="btn btn-outline-info w-100 mb-2">
+                                            <i class="bi bi-camera me-2"></i>Fotoğraf Güncelle
+                                        </button>
+                                        <button class="btn btn-outline-success w-100 mb-2">
+                                            <i class="bi bi-clipboard-check me-2"></i>Durum Güncelle
+                                        </button>
+                                        <button class="btn btn-outline-danger w-100">
+                                            <i class="bi bi-eye-slash me-2"></i>Pasif Yap
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Durum Bilgileri -->
+                            <div class="admin-card border-success">
+                                <div class="card-header bg-success text-white">
+                                    <h6><i class="bi bi-info-circle me-2"></i>Araç Durumu</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="status-info">
+                                        <div class="status-item">
+                                            <span class="status-label">Mevcut Durum:</span>
+                                            <span class="badge bg-success">Müsait</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span class="status-label">Son Güncelleme:</span>
+                                            <span class="text-muted">2 saat önce</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span class="status-label">Sonraki Rezervasyon:</span>
+                                            <span class="text-info">18 Haziran 2025</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span class="status-label">Bakım Gerekli:</span>
+                                            <span class="badge bg-warning">10.000 km sonra</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kayıt Bilgileri Footer -->
+                    <div class="record-info-footer">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="record-info-card">
+                                    <div class="record-info-icon">
+                                        <i class="bi bi-pencil text-warning"></i>
+                                    </div>
+                                    <div class="record-info-content">
+                                        <label class="record-info-label">Son Güncelleme</label>
+                                        <div class="record-info-details">
+                                            <span class="record-info-user">System Admin (admin@admin.com)</span>
+                                            <span class="record-info-date">12 Haziran 2025 09:45:23</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="record-info-card">
+                                    <div class="record-info-icon">
+                                        <i class="bi bi-plus-circle text-success"></i>
+                                    </div>
+                                    <div class="record-info-content">
+                                        <label class="record-info-label">Oluşturulma</label>
+                                        <div class="record-info-details">
+                                            <span class="record-info-user">Fleet Manager (fleet@rentcar.com)</span>
+                                            <span class="record-info-date">15 Mart 2025 14:30:12</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
