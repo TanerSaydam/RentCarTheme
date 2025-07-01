@@ -1,0 +1,3 @@
+# Udemy Araç Kiralama Eğitimi için AI ile hazırladığım tema
+
+# Eğitim henüz bitmedi, bitince burası güncellenecek...

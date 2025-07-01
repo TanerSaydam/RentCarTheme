@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar - Araç Kiralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2c3e50;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="bi bi-car-front-fill text-primary"></i>
+                RentCar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-telephone-fill"></i> İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Profilim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header -->
+    <section class="profile-header py-4 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="profile-welcome">
+                        <div class="user-avatar">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                alt="Ahmet Yılmaz" class="avatar-img">
+                            <div class="avatar-badge">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="welcome-text">
+                            <h1 class="h2 mb-1">Hoş geldin, Ahmet!</h1>
+                            <p class="mb-0">Profil bilgilerini buradan yönetebilirsin</p>
+                            <div class="member-since">
+                                <i class="bi bi-calendar-check me-1"></i>
+                                Üyelik tarihi: Ocak 2023
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="language-links">
+                        <a href="#" class="text-light"><i class="bi bi-box-arrow-right me-1"></i>Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="profile-main py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+                    <div class="profile-sidebar">
+                        <!-- User Info Card -->
+                        <div class="sidebar-card user-info">
+                            <div class="user-avatar-large">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                    alt="Ahmet Yılmaz" class="avatar-img">
+                                <button class="avatar-upload">
+                                    <i class="bi bi-camera"></i>
+                                </button>
+                            </div>
+                            <div class="user-details">
+                                <h4>Ahmet Yılmaz</h4>
+                                <p class="text-muted">ahmet.yilmaz@email.com</p>
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">12</span>
+                                        <span class="stat-label">Kiralama</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">2.450</span>
+                                        <span class="stat-label">Puan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Menu -->
+                        <div class="sidebar-card profile-nav">
+                            <nav class="profile-menu">
+                                <a href="#" class="menu-item">
+                                    <i class="bi bi-person-fill"></i>
+                                    <span>Profil Bilgileri</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                                <a href="#" class="menu-item">
+                                    <i class="bi bi-lock-fill"></i>
+                                    <span>Şifre Değiştir</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                                <a href="#" class="menu-item active">
+                                    <i class="bi bi-clock-history"></i>
+                                    <span>Kiralama Geçmişi</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Rental History -->
+                    <div class="profile-content">
+                        <div class="content-header">
+                            <h3><i class="bi bi-clock-history text-primary me-2"></i>Kiralama Geçmişi</h3>
+                            <p class="text-muted">Geçmiş kiralama işlemlerini görüntüle ve yönet</p>
+                        </div>
+
+                        <!-- Stats Overview -->
+                        <div class="stats-overview">
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="bi bi-car-front"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4>12</h4>
+                                            <span>Toplam</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="bi bi-calendar-check"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4>45</h4>
+                                            <span>Toplam Gün</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="bi bi-currency-exchange"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4>18.450₺</h4>
+                                            <span>Toplam</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="stat-info">
+                                            <h4>2.450</h4>
+                                            <span>Puan</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filter and Search -->
+                        <div class="filter-section">
+                            <div class="row g-3 align-items-end">
+                                <div class="col-md-3">
+                                    <label for="dateFilter" class="form-label">Tarih Aralığı</label>
+                                    <select class="form-select" id="dateFilter">
+                                        <option value="all">Tüm Zamanlar</option>
+                                        <option value="30days">Son 30 Gün</option>
+                                        <option value="3months">Son 3 Ay</option>
+                                        <option value="6months">Son 6 Ay</option>
+                                        <option value="1year" selected>Son 1 Yıl</option>
+                                        <option value="custom">Özel Tarih</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="statusFilter" class="form-label">Durum</label>
+                                    <select class="form-select" id="statusFilter">
+                                        <option value="all">Tüm Durumlar</option>
+                                        <option value="completed">Tamamlandı</option>
+                                        <option value="active">Aktif</option>
+                                        <option value="cancelled">İptal Edildi</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="searchRental" class="form-label">Ara</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-search"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="searchRental"
+                                            placeholder="Araç modeli, rezervasyon no...">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-outline-primary w-100">
+                                        <i class="bi bi-funnel"></i> Filtrele
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rental History List -->
+                        <div class="rental-history-list">
+                            <!-- Active Rental -->
+                            <div class="rental-item active-rental">
+                                <div class="rental-badge">
+                                    <span class="badge bg-success">Aktif</span>
+                                </div>
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="rental-image">
+                                            <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                                alt="Fiat Egea" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="rental-details">
+                                            <h5 class="rental-title">Fiat Egea Sedan</h5>
+                                            <div class="rental-info">
+                                                <div class="info-row">
+                                                    <i class="bi bi-calendar3 text-primary"></i>
+                                                    <span>15 Haziran 2025 - 22 Haziran 2025</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-geo-alt text-primary"></i>
+                                                    <span>Kayseri Havalimanı</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-hash text-primary"></i>
+                                                    <span>Rezervasyon: RNT-2025-071234</span>
+                                                </div>
+                                            </div>
+                                            <div class="rental-features">
+                                                <span class="feature-tag">Manuel</span>
+                                                <span class="feature-tag">Benzin</span>
+                                                <span class="feature-tag">5 Kişi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="rental-actions">
+                                            <div class="rental-price">
+                                                <span class="price-amount">1.490₺</span>
+                                                <span class="price-period">7 gün</span>
+                                            </div>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm w-100 mb-2">
+                                                    <i class="bi bi-eye"></i> Detayları Gör
+                                                </button>
+                                                <button class="btn btn-outline-secondary btn-sm w-100">
+                                                    <i class="bi bi-telephone"></i> Destek
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Completed Rentals -->
+                            <div class="rental-item">
+                                <div class="rental-badge">
+                                    <span class="badge bg-success">Tamamlandı</span>
+                                </div>
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="rental-image">
+                                            <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                                alt="Renault Clio" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="rental-details">
+                                            <h5 class="rental-title">Renault Clio</h5>
+                                            <div class="rental-info">
+                                                <div class="info-row">
+                                                    <i class="bi bi-calendar3 text-primary"></i>
+                                                    <span>28 Mayıs 2025 - 02 Haziran 2025</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-geo-alt text-primary"></i>
+                                                    <span>Kayseri Merkez Ofis</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-hash text-primary"></i>
+                                                    <span>Rezervasyon: RNT-2025-068912</span>
+                                                </div>
+                                            </div>
+                                            <div class="rental-features">
+                                                <span class="feature-tag">Otomatik</span>
+                                                <span class="feature-tag">Benzin</span>
+                                                <span class="feature-tag">5 Kişi</span>
+                                            </div>
+                                            <div class="rental-rating">
+                                                <span class="rating-label">Değerlendirmen:</span>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="rental-actions">
+                                            <div class="rental-price">
+                                                <span class="price-amount">2.340₺</span>
+                                                <span class="price-period">5 gün</span>
+                                            </div>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm w-100 mb-2">
+                                                    <i class="bi bi-eye"></i> Detayları Gör
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rental-item">
+                                <div class="rental-badge">
+                                    <span class="badge bg-success">Tamamlandı</span>
+                                </div>
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="rental-image">
+                                            <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                                alt="Hyundai Bayon" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="rental-details">
+                                            <h5 class="rental-title">Hyundai Bayon</h5>
+                                            <div class="rental-info">
+                                                <div class="info-row">
+                                                    <i class="bi bi-calendar3 text-primary"></i>
+                                                    <span>10 Nisan 2025 - 15 Nisan 2025</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-geo-alt text-primary"></i>
+                                                    <span>Kayseri Havalimanı</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-hash text-primary"></i>
+                                                    <span>Rezervasyon: RNT-2025-064578</span>
+                                                </div>
+                                            </div>
+                                            <div class="rental-features">
+                                                <span class="feature-tag">Otomatik</span>
+                                                <span class="feature-tag">Benzin</span>
+                                                <span class="feature-tag">SUV</span>
+                                            </div>
+                                            <div class="rental-rating">
+                                                <span class="rating-label">Değerlendirmen:</span>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star text-muted"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="rental-actions">
+                                            <div class="rental-price">
+                                                <span class="price-amount">2.850₺</span>
+                                                <span class="price-period">5 gün</span>
+                                            </div>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm w-100 mb-2">
+                                                    <i class="bi bi-eye"></i> Detayları Gör
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rental-item">
+                                <div class="rental-badge">
+                                    <span class="badge bg-danger">İptal Edildi</span>
+                                </div>
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="rental-image">
+                                            <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                                alt="BMW 320i" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="rental-details">
+                                            <h5 class="rental-title">BMW 320i</h5>
+                                            <div class="rental-info">
+                                                <div class="info-row">
+                                                    <i class="bi bi-calendar3 text-primary"></i>
+                                                    <span>25 Mart 2025 - 30 Mart 2025</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-geo-alt text-primary"></i>
+                                                    <span>Kayseri Merkez Ofis</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-hash text-primary"></i>
+                                                    <span>Rezervasyon: RNT-2025-062134</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-x-circle text-danger"></i>
+                                                    <span>İptal nedeni: Müşteri talebi</span>
+                                                </div>
+                                            </div>
+                                            <div class="rental-features">
+                                                <span class="feature-tag">Otomatik</span>
+                                                <span class="feature-tag">Dizel</span>
+                                                <span class="feature-tag">Premium</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="rental-actions">
+                                            <div class="rental-price">
+                                                <span class="price-amount cancelled">4.500₺</span>
+                                                <span class="price-period">5 gün</span>
+                                                <small class="refund-info">İade edildi</small>
+                                            </div>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm w-100 mb-2">
+                                                    <i class="bi bi-eye"></i> Detayları Gör
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rental-item">
+                                <div class="rental-badge">
+                                    <span class="badge bg-success">Tamamlandı</span>
+                                </div>
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <div class="rental-image">
+                                            <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                                alt="Fiat Egea" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="rental-details">
+                                            <h5 class="rental-title">Fiat Egea Sedan</h5>
+                                            <div class="rental-info">
+                                                <div class="info-row">
+                                                    <i class="bi bi-calendar3 text-primary"></i>
+                                                    <span>05 Şubat 2025 - 12 Şubat 2025</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-geo-alt text-primary"></i>
+                                                    <span>Kayseri Havalimanı</span>
+                                                </div>
+                                                <div class="info-row">
+                                                    <i class="bi bi-hash text-primary"></i>
+                                                    <span>Rezervasyon: RNT-2025-058901</span>
+                                                </div>
+                                            </div>
+                                            <div class="rental-features">
+                                                <span class="feature-tag">Manuel</span>
+                                                <span class="feature-tag">Benzin</span>
+                                                <span class="feature-tag">5 Kişi</span>
+                                            </div>
+                                            <div class="rental-rating">
+                                                <span class="rating-label">Değerlendirmen:</span>
+                                                <div class="stars">
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="rental-actions">
+                                            <div class="rental-price">
+                                                <span class="price-amount">3.430₺</span>
+                                                <span class="price-period">7 gün</span>
+                                            </div>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm w-100 mb-2">
+                                                    <i class="bi bi-eye"></i> Detayları Gör
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination-section">
+                            <nav aria-label="Kiralama geçmişi sayfalama">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                            <i class="bi bi-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="pagination-info text-center mt-3">
+                                <small class="text-muted">Toplam 12 kiralama içinden 1-5 arası gösteriliyor</small>
+                            </div>
+                        </div>
+
+                        <!-- Empty State (Hidden by default) -->
+                        <div class="empty-state d-none">
+                            <div class="empty-icon">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                            <h4>Henüz kiralama geçmişin yok</h4>
+                            <p class="text-muted">İlk kiralama işlemini gerçekleştirdiğinde burada görünecek</p>
+                            <a href="#" class="btn btn-primary">
+                                <i class="bi bi-plus-circle me-1"></i>İlk Rezervasyonunu Yap
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-car-front-fill text-primary"></i>
+                        RentCar
+                    </h5>
+                    <p class="text-muted">
+                        Türkiye'nin en güvenilir araç kiralama platformu.
+                        Hayalinizdeki seyahati gerçekleştirin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Hızlı Bağlantılar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Ana Sayfa</a></li>
+                        <li><a href="#" class="text-muted">Araç Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Hakkımızda</a></li>
+                        <li><a href="#" class="text-muted">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Hizmetler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Günlük Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Aylık Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Kurumsal Çözümler</a></li>
+                        <li><a href="#" class="text-muted">Güvence Paketleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">İletişim</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="bi bi-telephone"></i> +90 352 123 45 67</li>
+                        <li><i class="bi bi-envelope"></i> info@rentcar.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Kayseri, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 RentCar. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted me-3">Gizlilik Politikası</a>
+                    <a href="#" class="text-muted">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

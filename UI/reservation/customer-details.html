@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar - Araç Kiralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2c3e50;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="bi bi-car-front-fill text-primary"></i>
+                RentCar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-telephone-fill"></i> İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Giriş Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Steps -->
+    <section class="progress-steps py-3 bg-white border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="steps-container d-flex align-items-center gap-4">
+                        <div class="step completed">
+                            <div class="step-number"><i class="bi bi-check"></i></div>
+                            <div class="step-label">ARAÇ SEÇİMİ</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step completed">
+                            <div class="step-number"><i class="bi bi-check"></i></div>
+                            <div class="step-label">GÜVENCE PAKETLERİ</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step completed">
+                            <div class="step-number"><i class="bi bi-check"></i></div>
+                            <div class="step-label">ÜCRET&EKSTRA</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step active">
+                            <div class="step-number">4</div>
+                            <div class="step-label">SÜRÜCÜ DETAY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver Details Section -->
+    <section class="driver-details-section py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Main Form -->
+                <div class="col-lg-8">
+
+                    <!-- Address Information -->
+                    <div class="form-card mb-4">
+                        <div class="form-header">
+                            <h5><i class="bi bi-geo-alt-fill text-primary me-2"></i>Adres Bilgileri (İsteğe Bağlı)</h5>
+                            <button type="button" class="btn btn-link btn-sm text-primary" data-bs-toggle="collapse"
+                                data-bs-target="#addressForm">
+                                <i class="bi bi-plus-circle"></i> Adres Bilgileri
+                            </button>
+                        </div>
+                        <div class="collapse" id="addressForm">
+                            <div class="form-body">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="city" class="form-label">Şehir</label>
+                                        <select class="form-select" id="city">
+                                            <option value="">Şehir seçiniz</option>
+                                            <option value="ankara">Ankara</option>
+                                            <option value="istanbul">İstanbul</option>
+                                            <option value="izmir">İzmir</option>
+                                            <option value="kayseri">Kayseri</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="district" class="form-label">İlçe</label>
+                                        <select class="form-select" id="district">
+                                            <option value="">İlçe seçiniz</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="address" class="form-label">Adres</label>
+                                        <textarea class="form-control border" id="address" rows="3" placeholder="Detaylı adres bilginiz"></textarea>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="postalCode" class="form-label">Posta Kodu</label>
+                                        <input type="text" class="form-control border" id="postalCode" placeholder="Posta kodu">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flight Information -->
+                    <div class="form-card mb-4">
+                        <div class="form-header">
+                            <h5><i class="bi bi-airplane-fill text-primary me-2"></i>Uçuş Bilgileri (İsteğe Bağlı)</h5>
+                            <button type="button" class="btn btn-link btn-sm text-primary" data-bs-toggle="collapse"
+                                data-bs-target="#flightForm">
+                                <i class="bi bi-plus-circle"></i> Uçuş Bilgileri
+                            </button>
+                        </div>
+                        <div class="collapse" id="flightForm">
+                            <div class="form-body">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="flightNumber" class="form-label">Uçuş Numarası</label>
+                                        <input type="text" class="form-control border" id="flightNumber"
+                                            placeholder="Örn: TK123">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="arrivalTime" class="form-label">Varış Saati</label>
+                                        <input type="time" class="form-control border" id="arrivalTime">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credit Card Information -->
+                    <div class="form-card mb-4">
+                        <div class="form-header" style="flex-direction: column; align-items: start;">
+                            <h5>
+                                <i class="bi bi-credit-card-fill text-primary me-2"></i>
+                                Kredi Kartı Bilgileri
+                            </h5>
+                            <p class="form-subtitle">Ödeme yapılan kredi kartının isim aracı kiralayacak kişi aynı
+                                olmalıdır. Ödeme yapılan kredi kartının araç tesliminde ofiste gösterilmesi talep
+                                edilecektir. Kiralama süresinin 1 saatten fazla bir süre olması halinde
+                                rezervasyonunuzun herhangi bir gerekçe göstermeksizin iptal edebiliriz. Rezervasyon
+                                ücretinin tamamı kiralama esnasında bildirilmiş olduğunuz kredi kartınıza iade edilir.
+                                Kiralama süresinin 3 günden az olması halinde ücreti iade yapılmaz.</p>
+                        </div>
+                        <div class="form-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label for="cardNumber" class="form-label">Kredi Kartı Numarası *</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="cardNumber"
+                                            placeholder="Kredi kartı numarası" required>
+                                        <span class="input-group-text">
+                                            <i class="bi bi-credit-card text-muted"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cardMonth" class="form-label">Ay *</label>
+                                    <select class="form-select" id="cardMonth" required>
+                                        <option value="">Ay</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cardYear" class="form-label">Yıl *</label>
+                                    <select class="form-select" id="cardYear" required>
+                                        <option value="">Yıl</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cvv" class="form-label">CVV *</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="cvv" placeholder="CVV"
+                                            maxlength="4" required>
+                                        <span class="input-group-text">
+                                            <i class="bi bi-info-circle" data-bs-toggle="tooltip"
+                                                title="Kartınızın arkasındaki 3 haneli güvenlik kodu"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Sidebar -->
+                <div class="col-lg-4">
+                    <div class="summary-card sticky-top">
+                        <div class="card-header">
+                            <h5>Rezervasyon Özeti</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="car-summary mb-4">
+                                <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                    alt="Fiat Egea" class="img-fluid mb-3">
+                                <h6>Fiat Egea Sedan</h6>
+                                <p class="text-muted small">veya benzeri | Binek</p>
+                            </div>
+
+                            <div class="rental-details mb-4">
+                                <div class="detail-row">
+                                    <i class="bi bi-geo-alt-fill text-primary"></i>
+                                    <span>Kayseri Havalimanı</span>
+                                </div>
+                                <div class="detail-row">
+                                    <i class="bi bi-calendar3 text-primary"></i>
+                                    <span>01.07.2025, 17:00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <i class="bi bi-calendar3 text-primary"></i>
+                                    <span>02.07.2025, 17:00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <i class="bi bi-clock text-primary"></i>
+                                    <span>1 Gün</span>
+                                </div>
+                            </div>
+
+                            <div class="price-summary">
+                                <div class="price-row">
+                                    <span>Araç Kirası</span>
+                                    <span>1.490 TL</span>
+                                </div>
+                                <div class="price-row">
+                                    <span>Güvence Paketi</span>
+                                    <span>1.000 TL</span>
+                                </div>
+                                <div class="price-row">
+                                    <span>Ekstra</span>
+                                    <span>500 TL</span>
+                                </div>
+                                <div class="price-row total">
+                                    <span>TOPLAM</span>
+                                    <span>2.990 TL</span>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-2">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <i class="bi bi-check-circle me-2"></i>REZERVASYONU TAMAMLA
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-car-front-fill text-primary"></i>
+                        RentCar
+                    </h5>
+                    <p class="text-muted">
+                        Türkiye'nin en güvenilir araç kiralama platformu.
+                        Hayalinizdeki seyahati gerçekleştirin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Hızlı Bağlantılar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Ana Sayfa</a></li>
+                        <li><a href="#" class="text-muted">Araç Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Hakkımızda</a></li>
+                        <li><a href="#" class="text-muted">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Hizmetler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Günlük Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Aylık Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Kurumsal Çözümler</a></li>
+                        <li><a href="#" class="text-muted">Güvence Paketleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">İletişim</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="bi bi-telephone"></i> +90 352 123 45 67</li>
+                        <li><i class="bi bi-envelope"></i> info@rentcar.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Kayseri, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 RentCar. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted me-3">Gizlilik Politikası</a>
+                    <a href="#" class="text-muted">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

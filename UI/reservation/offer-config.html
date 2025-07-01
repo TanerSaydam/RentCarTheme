@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar - Araç Kiralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2c3e50;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="bi bi-car-front-fill text-primary"></i>
+                RentCar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-car-front"></i> Araç Kiralama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-shield-check"></i> Güvence Paketleri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-telephone-fill"></i> İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Giriş Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Steps -->
+    <section class="progress-steps py-3 bg-white border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="steps-container d-flex align-items-center gap-4">
+                        <div class="step completed">
+                            <div class="step-number"><i class="bi bi-check"></i></div>
+                            <div class="step-label">ARAÇ SEÇİMİ</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step completed">
+                            <div class="step-number"><i class="bi bi-check"></i></div>
+                            <div class="step-label">GÜVENCE PAKETLERİ</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step active">
+                            <div class="step-number">3</div>
+                            <div class="step-label">ÜCRET&EKSTRA</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-label">SÜRÜCÜ DETAY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="extras-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Protection Services -->
+                    <div class="extras-card mb-4">
+                        <div class="card-header">
+                            <h5><i class="bi bi-shield-check text-primary me-2"></i>Önerilen Güvenceler</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Mini Hasar Güvencesi -->
+                                <div class="col-md-6">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Mini Hasar Güvencesi</h6>
+                                            <p class="text-muted small">Ehliyeti ibrazi, kiralama ön şartlarının kabul (
+                                                findeksiz, deposito hariç ) ve araç teslimi sırasında ek sürücünün de
+                                                ofiste bizz bulunması gereklidir.</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">114 <span class="currency">TL Günlük</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Kış Lastiği -->
+                                <div class="col-md-6">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Kış Lastiği</h6>
+                                            <p class="text-muted small">Kış Lastiği (stoklarla sınırlıdır)</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">246 <span class="currency">TL Günlük</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Services -->
+                    <div class="extras-card mb-4">
+                        <div class="card-header">
+                            <h5><i class="bi bi-plus-circle text-primary me-2"></i>Ek Sürücü Paketi</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Genç Sürücü -->
+                                <div class="col-md-6">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Genç Sürücü Paketi</h6>
+                                            <p class="text-muted small">Yaş grubunuzun ust yaş grubundaki aracı
+                                                kiralayabilmenizi sağlamaktadır.</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">530 <span class="currency">TL Günlük</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Banka Kartı ile Kiralama -->
+                                <div class="col-md-6">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Banka Kartı ile Kiralama</h6>
+                                            <p class="text-muted small">Kiralama koşulları geçerli Banka Kartı ile
+                                                kiralamalar için isteyilen müşteriler bu ürünü satın alarak araç
+                                                kiralamaya işlemleri devam edebilirler.</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">3.193 <span class="currency">TL Kiralama Başı</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Depozitosuz Kiralama -->
+                                <div class="col-md-6">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Depozitosuz Kiralama</h6>
+                                            <p class="text-muted small">Depozito ödemeyi yapmak istemeyen müşteriler bu
+                                                üründeki şartın avanılara edinerek araç kiralamaya yapabilir. Bu ürünün
+                                                ücreti depozito gibi talep edilemektedir ve kontrat sonunda da olur
+                                                şekilde çalınlenmemektedir.</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">1.064 <span class="currency">TL Kiralama Başı</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Child Seats -->
+                    <div class="extras-card">
+                        <div class="card-header">
+                            <h5><i class="bi bi-person-plus text-primary me-2"></i>Koltuk Adaptörü</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Koltuk Adaptörü -->
+                                <div class="col-md-4">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Koltuk Adaptörü</h6>
+                                            <p class="text-muted small">4 yaşından sonra (15-36 kg.) arası çocuklar için
+                                                arka koltuk yükseltici koltukları kullanılmalıdır. Çocuk aracın kemerine
+                                                yükseltici yaşta kurla başlarla.</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">290 <span class="currency">TL Günlük</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Çocuk Koltuğu -->
+                                <div class="col-md-4">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Çocuk Koltuğu</h6>
+                                            <p class="text-muted small">4 yaşına kadar (9-18 kg. arası) hareket çocuk
+                                                güvenlik koltuğu tarızında arka koltuğa, öne bakan şekilde monte
+                                                edilebilir.</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">290 <span class="currency">TL Günlük</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bebek Koltuğu -->
+                                <div class="col-md-4">
+                                    <div class="service-item">
+                                        <div class="service-info">
+                                            <h6>Bebek Koltuğu</h6>
+                                            <p class="text-muted small">1 yaşına kadar (0 kiloya kadar) bebekler için
+                                                yapılmış olan ana kuçağı modelinde, arka koltuğa, arkaya bakacak şekilde
+                                                monte edilebilir.</p>
+                                        </div>
+                                        <div class="service-action">
+                                            <div class="price-tag">290 <span class="currency">TL Günlük</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Summary -->
+                <div class="col-lg-4">
+                    <div class="summary-card sticky-top">
+                        <div class="card-header">
+                            <h5>Fiat Egea Sedan</h5>
+                            <p class="text-muted mb-0">veya benzeri | Binek</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="summary-image text-center mb-3">
+                                <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                    alt="Fiat Egea" class="img-fluid">
+                            </div>
+
+                            <div class="summary-details">
+                                <div class="detail-row">
+                                    <div class="car-specs">
+                                        <div class="spec-row">
+                                            <i class="bi bi-people-fill"></i>
+                                            <span>5 Kişi</span>
+                                        </div>
+                                        <div class="spec-row">
+                                            <i class="bi bi-gear-fill"></i>
+                                            <span>4 Kapı</span>
+                                        </div>
+                                        <div class="spec-row">
+                                            <i class="bi bi-gear-fill"></i>
+                                            <span>Manuel</span>
+                                        </div>
+                                        <div class="spec-row">
+                                            <i class="bi bi-fuel-pump-fill"></i>
+                                            <span>Benzin</span>
+                                        </div>
+                                        <div class="spec-row">
+                                            <i class="bi bi-calendar"></i>
+                                            <span>Min. 25 Yaş</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <i class="bi bi-check-circle-fill text-success"></i>
+                                    <span>Toplam 3000 km kullanım hakkı bulunmaktadır.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <i class="bi bi-check-circle-fill text-success"></i>
+                                    <span>Sınırlı Güvence</span>
+                                </div>
+                            </div>
+
+                            <div class="summary-pricing mt-4">
+                                <div class="price-breakdown">
+                                    <div class="price-row">
+                                        <span>Araç Kiralama Fiyatı</span>
+                                        <span class="price">1.490 TL</span>
+                                    </div>
+                                    <div class="price-row">
+                                        <span>Güvence Paketleri</span>
+                                        <span class="price">1.000 TL</span>
+                                    </div>
+                                    <div class="price-row total">
+                                        <span>TOPLAM ÖDENECEK TUTAR</span>
+                                        <span class="price total-price">2.490 <small>TL</small></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-car-front-fill text-primary"></i>
+                        RentCar
+                    </h5>
+                    <p class="text-muted">
+                        Türkiye'nin en güvenilir araç kiralama platformu.
+                        Hayalinizdeki seyahati gerçekleştirin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Hızlı Bağlantılar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Ana Sayfa</a></li>
+                        <li><a href="#" class="text-muted">Araç Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Hakkımızda</a></li>
+                        <li><a href="#" class="text-muted">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Hizmetler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Günlük Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Aylık Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Kurumsal Çözümler</a></li>
+                        <li><a href="#" class="text-muted">Güvence Paketleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">İletişim</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="bi bi-telephone"></i> +90 352 123 45 67</li>
+                        <li><i class="bi bi-envelope"></i> info@rentcar.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Kayseri, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 RentCar. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted me-3">Gizlilik Politikası</a>
+                    <a href="#" class="text-muted">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar - Araç Kiralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2c3e50;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="bi bi-car-front-fill text-primary"></i>
+                RentCar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-telephone-fill"></i> İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Profilim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header -->
+    <section class="profile-header py-4 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="profile-welcome">
+                        <div class="user-avatar">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                alt="Ahmet Yılmaz" class="avatar-img">
+                            <div class="avatar-badge">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="welcome-text">
+                            <h1 class="h2 mb-1">Hoş geldin, Ahmet!</h1>
+                            <p class="mb-0">Profil bilgilerini buradan yönetebilirsin</p>
+                            <div class="member-since">
+                                <i class="bi bi-calendar-check me-1"></i>
+                                Üyelik tarihi: Ocak 2023
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="language-links">
+                        <a href="#" class="text-light"><i class="bi bi-box-arrow-right me-1"></i>Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="profile-main py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+                    <div class="profile-sidebar">
+                        <!-- User Info Card -->
+                        <div class="sidebar-card user-info">
+                            <div class="user-avatar-large">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                    alt="Ahmet Yılmaz" class="avatar-img">
+                                <button class="avatar-upload">
+                                    <i class="bi bi-camera"></i>
+                                </button>
+                            </div>
+                            <div class="user-details">
+                                <h4>Ahmet Yılmaz</h4>
+                                <p class="text-muted">ahmet.yilmaz@email.com</p>
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">12</span>
+                                        <span class="stat-label">Kiralama</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">2.450</span>
+                                        <span class="stat-label">Puan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Menu -->
+                        <div class="sidebar-card profile-nav">
+                            <nav class="profile-menu">
+                                <a href="#" class="menu-item">
+                                    <i class="bi bi-person-fill"></i>
+                                    <span>Profil Bilgileri</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                                <a href="#" class="menu-item">
+                                    <i class="bi bi-lock-fill"></i>
+                                    <span>Şifre Değiştir</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                                <a href="#" class="menu-item active">
+                                    <i class="bi bi-clock-history"></i>
+                                    <span>Kiralama Geçmişi</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Reservation Detail Content -->
+                    <div class="profile-content">
+                        <div class="content-header">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h3 class="mb-0"><i class="bi bi-receipt text-primary me-2"></i>Rezervasyon Detayı</h3>
+                                        <a href="#" class="btn btn-outline-secondary btn-sm me-3">
+                                            <i class="bi bi-arrow-left me-1"></i>Geri
+                                        </a>
+                                    </div>
+                                    <p class="text-muted mb-0">RNT-2025-071234 numaralı rezervasyonun detaylı bilgileri
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reservation-detail-content">
+                            <!-- Status Banner -->
+                            <div class="status-banner active">
+                                <div class="status-icon">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                                <div class="status-info">
+                                    <h5>Rezervasyon Aktif</h5>
+                                    <p>Aracınız hazır, teslim alma saatiniz yaklaşıyor</p>
+                                </div>
+                                <div class="status-actions">
+                                    <button class="btn btn-outline-light btn-sm">
+                                        <i class="bi bi-telephone"></i> Destek
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Reservation Summary -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-car-front text-primary me-2"></i>Araç ve Kiralama Bilgileri</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-4">
+                                        <div class="col-md-4">
+                                            <div class="car-preview">
+                                                <img src="https://www.otokoc.com.tr/getmedia/d315dadb-f6cf-47c6-8305-3ca3aa26b6b3/Egea-Sedan-Easy-650x354.webp?ext=.webp"
+                                                    alt="Fiat Egea" class="car-image">
+                                                <div class="car-title">
+                                                    <h6>Fiat Egea Sedan</h6>
+                                                    <div class="car-features">
+                                                        <span class="feature-badge">Manuel</span>
+                                                        <span class="feature-badge">Benzin</span>
+                                                        <span class="feature-badge">5 Kişi</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="rental-details-grid">
+                                                <div class="detail-item">
+                                                    <div class="detail-label">
+                                                        <i class="bi bi-geo-alt-fill text-primary"></i>
+                                                        Alış & Dönüş Yeri
+                                                    </div>
+                                                    <div class="detail-value">Kayseri Havalimanı</div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <div class="detail-label">
+                                                        <i class="bi bi-calendar-event text-primary"></i>
+                                                        Alış Tarihi & Saati
+                                                    </div>
+                                                    <div class="detail-value">15 Haziran 2025, Salı - 17:00</div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <div class="detail-label">
+                                                        <i class="bi bi-calendar-check text-primary"></i>
+                                                        Dönüş Tarihi & Saati
+                                                    </div>
+                                                    <div class="detail-value">22 Haziran 2025, Salı - 17:00</div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <div class="detail-label">
+                                                        <i class="bi bi-clock text-primary"></i>
+                                                        Kiralama Süresi
+                                                    </div>
+                                                    <div class="detail-value">7 Gün (168 Saat)</div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <div class="detail-label">
+                                                        <i class="bi bi-hash text-primary"></i>
+                                                        Rezervasyon No
+                                                    </div>
+                                                    <div class="detail-value">RNT-2025-071234</div>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <div class="detail-label">
+                                                        <i class="bi bi-calendar-plus text-primary"></i>
+                                                        Rezervasyon Tarihi
+                                                    </div>
+                                                    <div class="detail-value">10 Haziran 2025, 14:30</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Driver Information -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-person-fill text-primary me-2"></i>Sürücü Bilgileri</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="info-group">
+                                                <label>Ana Sürücü</label>
+                                                <div class="driver-card">
+                                                    <div class="driver-avatar">
+                                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s"
+                                                            alt="Ahmet Yılmaz">
+                                                    </div>
+                                                    <div class="driver-info">
+                                                        <h6>Ahmet YILMAZ</h6>
+                                                        <p>T.C. Kimlik: 123****5678</p>
+                                                        <p>Doğum: 15.03.1985</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="info-group">
+                                                <label>İletişim Bilgileri</label>
+                                                <div class="contact-details">
+                                                    <div class="contact-item">
+                                                        <i class="bi bi-envelope"></i>
+                                                        <span>ahmet.yilmaz@email.com</span>
+                                                    </div>
+                                                    <div class="contact-item">
+                                                        <i class="bi bi-telephone"></i>
+                                                        <span>+90 532 123 45 67</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Protection & Extras -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-shield-check text-primary me-2"></i>Güvence Paketi & Ekstralar
+                                    </h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="protection-package">
+                                                <div class="package-header">
+                                                    <i class="bi bi-shield-fill-check text-success"></i>
+                                                    <h6>Standart Güvence</h6>
+                                                    <span class="included">Dahil</span>
+                                                </div>
+                                                <ul class="package-features">
+                                                    <li><i class="bi bi-check"></i> Zorunlu Trafik Sigortası</li>
+                                                    <li><i class="bi bi-check"></i> Kasko Sigortası</li>
+                                                    <li><i class="bi bi-check"></i> 7/24 Yol Yardımı</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="extras-list">
+                                                <h6>Ek Hizmetler</h6>
+                                                <div class="extra-item">
+                                                    <span>Ek sürücü eklenmedi</span>
+                                                </div>
+                                                <div class="extra-item">
+                                                    <span>Bebek koltuğu eklenmedi</span>
+                                                </div>
+                                                <div class="extra-item">
+                                                    <span>GPS navigasyon eklenmedi</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Details -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-credit-card text-primary me-2"></i>Ödeme Detayları</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="payment-method">
+                                                <h6>Ödeme Yöntemi</h6>
+                                                <div class="payment-card">
+                                                    <i class="bi bi-credit-card-2-front text-primary"></i>
+                                                    <div class="card-info">
+                                                        <span class="card-type">Kredi Kartı</span>
+                                                        <span class="card-number">**** **** **** 1234</span>
+                                                        <span class="card-holder">AHMET YILMAZ</span>
+                                                    </div>
+                                                    <div class="payment-status success">
+                                                        <i class="bi bi-check-circle-fill"></i>
+                                                        <span>Ödendi</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="price-breakdown">
+                                                <h6>Fiyat Detayı</h6>
+                                                <div class="price-summary">
+                                                    <div class="price-line">
+                                                        <span>Araç Kirası (7 gün)</span>
+                                                        <span>1.330 TL</span>
+                                                    </div>
+                                                    <div class="price-line">
+                                                        <span>Güvence Paketi</span>
+                                                        <span>Dahil</span>
+                                                    </div>
+                                                    <div class="price-line">
+                                                        <span>KDV (%20)</span>
+                                                        <span>160 TL</span>
+                                                    </div>
+                                                    <div class="price-line total">
+                                                        <span>TOPLAM ÖDENDİ</span>
+                                                        <span>1.490 TL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Location & Instructions -->
+                            <div class="detail-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-geo-alt text-primary me-2"></i>Teslim Alma Bilgileri</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="location-info">
+                                        <div class="location-header">
+                                            <h6>Kayseri Havalimanı Ofisi</h6>
+                                            <span class="status-badge open">Açık</span>
+                                        </div>
+                                        <div class="location-details">
+                                            <div class="detail-item">
+                                                <i class="bi bi-geo-alt-fill"></i>
+                                                <span>Kayseri Erkilet Havalimanı, Dış Hatlar Terminali</span>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="bi bi-clock"></i>
+                                                <span>Çalışma Saatleri: 06:00 - 24:00</span>
+                                            </div>
+                                            <div class="detail-item">
+                                                <i class="bi bi-telephone"></i>
+                                                <span>+90 352 123 45 67</span>
+                                            </div>
+                                        </div>
+                                        <div class="instructions">
+                                            <h6>Teslim Alma Talimatları</h6>
+                                            <ul>
+                                                <li>T.C. Kimlik kartınızı ve ehliyetinizi yanınızda bulundurun</li>
+                                                <li>Rezervasyon yapılan kredi kartını getirin</li>
+                                                <li>Havalimanına vardıktan sonra ofisimizi arayın</li>
+                                                <li>Araç kontrolünü birlikte yapalım</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="detail-actions">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="action-info">
+                                        <small class="text-muted">
+                                            <i class="bi bi-info-circle me-1"></i>
+                                            Rezervasyonunuz onaylandı ve aktif durumda
+                                        </small>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <button type="button" class="btn btn-outline-danger me-2">
+                                            <i class="bi bi-x-circle me-1"></i>İptal Et
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-car-front-fill text-primary"></i>
+                        RentCar
+                    </h5>
+                    <p class="text-muted">
+                        Türkiye'nin en güvenilir araç kiralama platformu.
+                        Hayalinizdeki seyahati gerçekleştirin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Hızlı Bağlantılar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Ana Sayfa</a></li>
+                        <li><a href="#" class="text-muted">Araç Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Hakkımızda</a></li>
+                        <li><a href="#" class="text-muted">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Hizmetler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Günlük Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Aylık Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Kurumsal Çözümler</a></li>
+                        <li><a href="#" class="text-muted">Güvence Paketleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">İletişim</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="bi bi-telephone"></i> +90 352 123 45 67</li>
+                        <li><i class="bi bi-envelope"></i> info@rentcar.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Kayseri, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 RentCar. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted me-3">Gizlilik Politikası</a>
+                    <a href="#" class="text-muted">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

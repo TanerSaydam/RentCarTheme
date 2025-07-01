@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar - Araç Kiralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2c3e50;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="bi bi-car-front-fill text-primary"></i>
+                RentCar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-telephone-fill"></i> İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Giriş Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Cards -->
+                <div class="col-lg-8">
+                    <div class="contact-intro mb-5">
+                        <h2 class="contact-title">RentCar İletişim Bilgileri</h2>
+                        <p class="contact-subtitle">Size en iyi hizmeti sunabilmek için buradayız. İhtiyacınız olan her
+                            konuda bizimle iletişime geçebilirsiniz.</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Main Office -->
+                        <div class="col-md-6">
+                            <div class="contact-card main-office">
+                                <div class="contact-icon">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Merkez Ofis</h4>
+                                    <div class="info-item">
+                                        <i class="bi bi-geo-alt-fill text-primary"></i>
+                                        <div>
+                                            <strong>Adres:</strong><br>
+                                            Cumhuriyet Mahallesi<br>
+                                            Atatürk Bulvarı No: 123/A<br>
+                                            Melikgazi / Kayseri<br>
+                                            38030
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-telephone-fill text-success"></i>
+                                        <div>
+                                            <strong>Telefon:</strong><br>
+                                            <a href="tel:+903522221234">+90 352 222 12 34</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-whatsapp text-success"></i>
+                                        <div>
+                                            <strong>WhatsApp:</strong><br>
+                                            <a href="https://wa.me/905321234567">+90 532 123 45 67</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Airport Office -->
+                        <div class="col-md-6">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="bi bi-airplane"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Havalimanı Ofisi</h4>
+                                    <div class="info-item">
+                                        <i class="bi bi-geo-alt-fill text-primary"></i>
+                                        <div>
+                                            <strong>Adres:</strong><br>
+                                            Kayseri Havalimanı<br>
+                                            İç Hatlar Terminali<br>
+                                            Araç Kiralama Alanı<br>
+                                            Kayseri
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-telephone-fill text-success"></i>
+                                        <div>
+                                            <strong>Telefon:</strong><br>
+                                            <a href="tel:+903522345678">+90 352 234 56 78</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-clock text-warning"></i>
+                                        <div>
+                                            <strong>Çalışma Saatleri:</strong><br>
+                                            7/24 Açık
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Service -->
+                        <div class="col-md-6">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="bi bi-headset"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Müşteri Hizmetleri</h4>
+                                    <div class="info-item">
+                                        <i class="bi bi-telephone-fill text-success"></i>
+                                        <div>
+                                            <strong>Destek Hattı:</strong><br>
+                                            <a href="tel:08502223344">0850 222 33 44</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-envelope-fill text-primary"></i>
+                                        <div>
+                                            <strong>E-posta:</strong><br>
+                                            <a href="mailto:destek@rentcar.com">destek@rentcar.com</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-clock text-warning"></i>
+                                        <div>
+                                            <strong>Çalışma Saatleri:</strong><br>
+                                            7/24 Hizmet
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emergency Contact -->
+                        <div class="col-md-6">
+                            <div class="contact-card emergency">
+                                <div class="contact-icon">
+                                    <i class="bi bi-exclamation-triangle-fill"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Acil Durum</h4>
+                                    <div class="info-item">
+                                        <i class="bi bi-telephone-fill text-danger"></i>
+                                        <div>
+                                            <strong>Acil Durum Hattı:</strong><br>
+                                            <a href="tel:+905321112233">+90 532 111 22 33</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-shield-exclamation text-warning"></i>
+                                        <div>
+                                            <strong>Yol Yardım:</strong><br>
+                                            <a href="tel:08503334455">0850 333 44 55</a>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="bi bi-clock text-danger"></i>
+                                        <div>
+                                            <strong>Hizmet:</strong><br>
+                                            7/24 Aktif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="additional-info mt-5">
+                        <div class="info-card">
+                            <h4><i class="bi bi-info-circle-fill text-primary me-2"></i>Önemli Bilgiler</h4>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="info-section">
+                                        <h6><i class="bi bi-clock text-primary me-2"></i>Çalışma Saatleri</h6>
+                                        <ul class="info-list">
+                                            <li><strong>Pazartesi - Cuma:</strong> 08:00 - 18:00</li>
+                                            <li><strong>Cumartesi:</strong> 09:00 - 17:00</li>
+                                            <li><strong>Pazar:</strong> 10:00 - 16:00</li>
+                                            <li><strong>Havalimanı Ofisi:</strong> 7/24 Açık</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-section">
+                                        <h6><i class="bi bi-car-front text-primary me-2"></i>Araç Teslim Saatleri</h6>
+                                        <ul class="info-list">
+                                            <li><strong>Minimum Kiralama:</strong> 24 Saat</li>
+                                            <li><strong>Araç Teslimi:</strong> 08:00 - 20:00</li>
+                                            <li><strong>Araç İadesi:</strong> 07:00 - 22:00</li>
+                                            <li><strong>Havalimanı:</strong> Uçuş saatlerine göre</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Quick Contact -->
+                    <div class="sidebar-card quick-contact">
+                        <div class="card-header">
+                            <h5><i class="bi bi-lightning-fill text-warning me-2"></i>Hızlı İletişim</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-contact-list">
+                                <a href="tel:08502223344" class="quick-contact-item">
+                                    <div class="contact-icon-sm">
+                                        <i class="bi bi-telephone-fill"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <strong>Rezervasyon</strong>
+                                        <span>0850 222 33 44</span>
+                                    </div>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+
+                                <a href="https://wa.me/905321234567" class="quick-contact-item">
+                                    <div class="contact-icon-sm whatsapp">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <strong>WhatsApp</strong>
+                                        <span>Anında Destek</span>
+                                    </div>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+
+                                <a href="mailto:destek@rentcar.com" class="quick-contact-item">
+                                    <div class="contact-icon-sm email">
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <strong>E-posta</strong>
+                                        <span>destek@rentcar.com</span>
+                                    </div>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="sidebar-card social-media">
+                        <div class="card-header">
+                            <h5><i class="bi bi-share-fill text-info me-2"></i>Sosyal Medya</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="social-links social-links-contact">
+                                <div class="social-link cursor social-link-hover">
+                                    <i class="bi bi-facebook"></i>
+                                    <span>Facebook</span>
+                                </div>
+                                <div class="social-link cursor social-link-hover">
+                                    <i class="bi bi-instagram"></i>
+                                    <span>Instagram</span>
+                                </div>
+                                <div class="social-link cursor social-link-hover">
+                                    <i class="bi bi-twitter"></i>
+                                    <span>Twitter</span>
+                                </div>
+                                <div class="social-link cursor social-link-hover">
+                                    <i class="bi bi-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </div>
+                                <div class="social-link cursor social-link-hover">
+                                    <i class="bi bi-youtube"></i>
+                                    <span>Youtube</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Info -->
+                    <div class="sidebar-card company-info">
+                        <div class="card-header">
+                            <h5><i class="bi bi-building text-primary me-2"></i>Firma Bilgileri</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="company-details">
+                                <div class="company-item">
+                                    <strong>Firma Adı:</strong>
+                                    <span>RentCar Araç Kiralama Ltd. Şti.</span>
+                                </div>
+                                <div class="company-item">
+                                    <strong>Vergi Dairesi:</strong>
+                                    <span>Kayseri Vergi Dairesi</span>
+                                </div>
+                                <div class="company-item">
+                                    <strong>Vergi No:</strong>
+                                    <span>123 456 7890</span>
+                                </div>
+                                <div class="company-item">
+                                    <strong>Ticaret Sicil No:</strong>
+                                    <span>12345</span>
+                                </div>
+                                <div class="company-item">
+                                    <strong>Kuruluş Yılı:</strong>
+                                    <span>2015</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="sidebar-card office-hours">
+                        <div class="card-header">
+                            <h5><i class="bi bi-clock text-success me-2"></i>Çalışma Saatleri</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="hours-list">
+                                <div class="hour-item">
+                                    <span class="day">Pazartesi - Cuma</span>
+                                    <span class="time">08:00 - 18:00</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">Cumartesi</span>
+                                    <span class="time">09:00 - 17:00</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">Pazar</span>
+                                    <span class="time">10:00 - 16:00</span>
+                                </div>
+                                <div class="hour-item special">
+                                    <span class="day">Havalimanı Ofisi</span>
+                                    <span class="time open">7/24 Açık</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-car-front-fill text-primary"></i>
+                        RentCar
+                    </h5>
+                    <p class="text-muted">
+                        Türkiye'nin en güvenilir araç kiralama platformu.
+                        Hayalinizdeki seyahati gerçekleştirin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Hızlı Bağlantılar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Ana Sayfa</a></li>
+                        <li><a href="#" class="text-muted">Araç Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Hakkımızda</a></li>
+                        <li><a href="#" class="text-muted">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Hizmetler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Günlük Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Aylık Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Kurumsal Çözümler</a></li>
+                        <li><a href="#" class="text-muted">Güvence Paketleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">İletişim</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="bi bi-telephone"></i> +90 352 123 45 67</li>
+                        <li><i class="bi bi-envelope"></i> info@rentcar.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Kayseri, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 RentCar. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted me-3">Gizlilik Politikası</a>
+                    <a href="#" class="text-muted">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

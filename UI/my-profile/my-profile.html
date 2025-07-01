@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar - Araç Kiralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2c3e50;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="bi bi-car-front-fill text-primary"></i>
+                RentCar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-telephone-fill"></i> İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person"></i> Profilim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header -->
+    <section class="profile-header py-4 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="profile-welcome">
+                        <div class="user-avatar">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s" alt="Ahmet Yılmaz"
+                                class="avatar-img">
+                            <div class="avatar-badge">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                        </div>
+                        <div class="welcome-text">
+                            <h1 class="h2 mb-1">Hoş geldin, Ahmet!</h1>
+                            <p class="mb-0">Profil bilgilerini buradan yönetebilirsin</p>
+                            <div class="member-since">
+                                <i class="bi bi-calendar-check me-1"></i>
+                                Üyelik tarihi: Ocak 2023
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="language-links">
+                        <a href="#" class="text-light"><i class="bi bi-box-arrow-right me-1"></i>Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="profile-main py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3">
+                    <div class="profile-sidebar">
+                        <!-- User Info Card -->
+                        <div class="sidebar-card user-info">
+                            <div class="user-avatar-large">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNBRW6kw4PvewS5EGHKY7nNsJiWvrbsVIzZA&s" alt="Ahmet Yılmaz"
+                                    class="avatar-img">
+                                <button class="avatar-upload">
+                                    <i class="bi bi-camera"></i>
+                                </button>
+                            </div>
+                            <div class="user-details">
+                                <h4>Ahmet Yılmaz</h4>
+                                <p class="text-muted">ahmet.yilmaz@email.com</p>
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">12</span>
+                                        <span class="stat-label">Kiralama</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">2.450</span>
+                                        <span class="stat-label">Puan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Menu -->
+                        <div class="sidebar-card profile-nav">
+                            <nav class="profile-menu">
+                                <a href="#" class="menu-item active">
+                                    <i class="bi bi-person-fill"></i>
+                                    <span>Profil Bilgileri</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                                <a href="#" class="menu-item">
+                                    <i class="bi bi-lock-fill"></i>
+                                    <span>Şifre Değiştir</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                                <a href="#" class="menu-item">
+                                    <i class="bi bi-clock-history"></i>
+                                    <span>Kiralama Geçmişi</span>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <!-- Profile Form -->
+                    <div class="profile-content">
+                        <div class="content-header">
+                            <h3><i class="bi bi-person-fill text-primary me-2"></i>Profil Bilgileri</h3>
+                            <p class="text-muted">Kişisel bilgilerini güncel tutarak daha iyi hizmet alabilirsin</p>
+                        </div>
+
+                        <form class="profile-form">
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-person-circle text-primary me-2"></i>Kişisel Bilgiler</h5>
+                                    <small class="text-muted">Temel kişisel bilgilerin</small>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">Ad *</label>
+                                            <input type="text" class="form-control" id="firstName" value="Ahmet"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label">Soyad *</label>
+                                            <input type="text" class="form-control" id="lastName" value="Yılmaz"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="tcNumber" class="form-label">T.C. Kimlik Numarası *</label>
+                                            <input type="text" class="form-control" id="tcNumber" value="123****5678"
+                                                readonly>
+                                            <small class="form-text text-muted">T.C. Kimlik numarası
+                                                değiştirilemez</small>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="birthDate" class="form-label">Doğum Tarihi *</label>
+                                            <input type="date" class="form-control" id="birthDate" value="1985-03-15"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="gender" class="form-label">Cinsiyet</label>
+                                            <select class="form-select" id="gender">
+                                                <option value="">Seçiniz</option>
+                                                <option value="male" selected>Erkek</option>
+                                                <option value="female">Kadın</option>
+                                                <option value="other">Belirtmek istemiyorum</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="nationality" class="form-label">Uyruk</label>
+                                            <select class="form-select" id="nationality">
+                                                <option value="tr" selected>Türkiye Cumhuriyeti</option>
+                                                <option value="other">Diğer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-telephone-fill text-primary me-2"></i>İletişim Bilgileri</h5>
+                                    <small class="text-muted">İletişim kurabilmemiz için güncel bilgiler</small>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="email" class="form-label">E-posta Adresi *</label>
+                                                <input type="email" class="form-control" id="email" value="ahmet.yilmaz@email.com" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="phone" class="form-label">Telefon Numarası *</label>
+                                                <input type="tel" class="form-control" id="phone" value="532 123 45 67" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Address Information -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-geo-alt-fill text-primary me-2"></i>Adres Bilgileri</h5>
+                                    <small class="text-muted">Fatura ve kargo teslimatı için adres bilgilerin</small>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label for="country" class="form-label">Ülke</label>
+                                            <select class="form-select" id="country">
+                                                <option value="tr" selected>Türkiye</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="city" class="form-label">Şehir</label>
+                                            <select class="form-select" id="city">
+                                                <option value="">Şehir seçiniz</option>
+                                                <option value="kayseri" selected>Kayseri</option>
+                                                <option value="ankara">Ankara</option>
+                                                <option value="istanbul">İstanbul</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="district" class="form-label">İlçe</label>
+                                            <select class="form-select" id="district">
+                                                <option value="">İlçe seçiniz</option>
+                                                <option value="melikgazi" selected>Melikgazi</option>
+                                                <option value="kocasinan">Kocasinan</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="address" class="form-label">Adres</label>
+                                            <textarea class="form-control" id="address" rows="3"
+                                                placeholder="Detaylı adres bilginiz">Cumhuriyet Mahallesi, Atatürk Caddesi No: 45/8</textarea>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="postalCode" class="form-label">Posta Kodu</label>
+                                            <input type="text" class="form-control" id="postalCode" value="38030">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- License Information -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-card-text text-primary me-2"></i>Ehliyet Bilgileri</h5>
+                                    <small class="text-muted">Araç kiralama için gerekli ehliyet bilgilerin</small>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="licenseNumber" class="form-label">Ehliyet Numarası</label>
+                                            <input type="text" class="form-control" id="licenseNumber"
+                                                value="ABC123456">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="licenseDate" class="form-label">Ehliyet Alma Tarihi</label>
+                                            <input type="date" class="form-control" id="licenseDate" value="2005-06-20">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="licenseExpiry" class="form-label">Ehliyet Geçerlilik
+                                                Tarihi</label>
+                                            <input type="date" class="form-control" id="licenseExpiry"
+                                                value="2030-06-20">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="licenseClass" class="form-label">Ehliyet Sınıfı</label>
+                                            <select class="form-select" id="licenseClass">
+                                                <option value="">Seçiniz</option>
+                                                <option value="b" selected>B Sınıfı</option>
+                                                <option value="a">A Sınıfı</option>
+                                                <option value="c">C Sınıfı</option>
+                                                <option value="d">D Sınıfı</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Preferences -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-gear-fill text-primary me-2"></i>Tercihler</h5>
+                                    <small class="text-muted">Kişiselleştirilmiş deneyim için tercihlerini
+                                        belirt</small>
+                                </div>
+                                <div class="section-content">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="language" class="form-label">Dil Tercihi</label>
+                                            <select class="form-select" id="language">
+                                                <option value="tr" selected>Türkçe</option>
+                                                <option value="en">English</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="currency" class="form-label">Para Birimi</label>
+                                            <select class="form-select" id="currency">
+                                                <option value="try" selected>TRY (₺)</option>
+                                                <option value="usd">USD ($)</option>
+                                                <option value="eur">EUR (€)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Notification Preferences -->
+                                    <div class="mt-4">
+                                        <h6 class="mb-3">Bildirim Tercihleri</h6>
+                                        <div class="notification-preferences">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="emailNotifications"
+                                                    checked>
+                                                <label class="form-check-label" for="emailNotifications">
+                                                    E-posta bildirimleri
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="smsNotifications"
+                                                    checked>
+                                                <label class="form-check-label" for="smsNotifications">
+                                                    SMS bildirimleri
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="pushNotifications">
+                                                <label class="form-check-label" for="pushNotifications">
+                                                    Mobil uygulama bildirimleri
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="marketingEmails"
+                                                    checked>
+                                                <label class="form-check-label" for="marketingEmails">
+                                                    Kampanya ve promosyon e-postaları
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="form-info">
+                                        <small class="text-muted">
+                                            <i class="bi bi-info-circle me-1"></i>
+                                            Son güncelleme: 15 Haziran 2025, 14:30
+                                        </small>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <button type="button" class="btn btn-outline-secondary me-2">
+                                            <i class="bi bi-arrow-clockwise me-1"></i>Sıfırla
+                                        </button>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="bi bi-check-circle me-1"></i>Değişiklikleri Kaydet
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-car-front-fill text-primary"></i>
+                        RentCar
+                    </h5>
+                    <p class="text-muted">
+                        Türkiye'nin en güvenilir araç kiralama platformu.
+                        Hayalinizdeki seyahati gerçekleştirin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Hızlı Bağlantılar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Ana Sayfa</a></li>
+                        <li><a href="#" class="text-muted">Araç Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Hakkımızda</a></li>
+                        <li><a href="#" class="text-muted">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Hizmetler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Günlük Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Aylık Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Kurumsal Çözümler</a></li>
+                        <li><a href="#" class="text-muted">Güvence Paketleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">İletişim</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="bi bi-telephone"></i> +90 352 123 45 67</li>
+                        <li><i class="bi bi-envelope"></i> info@rentcar.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Kayseri, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 RentCar. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted me-3">Gizlilik Politikası</a>
+                    <a href="#" class="text-muted">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

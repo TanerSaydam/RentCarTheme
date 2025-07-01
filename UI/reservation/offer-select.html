@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar - Araç Kiralama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #2c3e50;">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <i class="bi bi-car-front-fill text-primary"></i>
+                RentCar
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i> Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-car-front"></i> Araç Kiralama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-shield-check"></i> Güvence Paketleri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-telephone-fill"></i> İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Giriş Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Steps -->
+    <section class="progress-steps py-3 bg-white border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="steps-container d-flex align-items-center gap-4">
+                        <div class="step active">
+                            <div class="step-number">1</div>
+                            <div class="step-label">ARAÇ SEÇİMİ</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-label">GÜVENCE PAKETLERİ</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-label">ÜCRET&EKSTRA</div>
+                        </div>
+                        <div class="step-divider"></div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-label">SÜRÜCÜ DETAY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-section py-4 bg-light">
+        <div class="container">
+                <div class="justify-content-center">
+                    <div class="booking-card">
+                        <div class="booking-header p-3 bg-primary text-white">
+                            <h4 class="mb-0 text-center">
+                                <i class="bi bi-calendar-check me-2"></i>
+                                Araç Kiralama - Rent A Car
+                            </h4>
+                        </div>
+                        <div class="booking-form p-4">
+                            <form>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-tabs d-flex">
+                                            <button type="button" class="btn btn-outline-primary active me-2">
+                                                Yurt İçi
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 align-items-end">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="form-label text-muted small">Alış & Dönüş</label>
+                                            <select class="form-control">
+                                                <option>Kayseri Havalimanı</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="form-label text-muted small">Alış tarihi saati</label>
+                                            <div class="d-flex">
+                                                <input type="date" class="form-control">
+                                                <select class="form-control">
+                                                    <option>00:00</option>
+                                                    <option>00:30</option>
+                                                    <option>01:00</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="form-label text-muted small">Dönüş tarihi saati</label>
+                                            <div class="d-flex">
+                                                <input type="date" class="form-control">
+                                                <select class="form-control">
+                                                    <option>00:00</option>
+                                                    <option>00:30</option>
+                                                    <option>01:00</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-primary btn-lg fw-bold">
+                                            ARAÇLARI GÖSTER
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Filters and Cars -->
+    <section class="cars-listing py-4">
+        <div class="container">
+            <!-- Filter Bar -->
+            <div class="filter-bar mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <div class="car-count">
+                            <span class="count-number">11</span>
+                            <span class="count-label">TEKLİF</span>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="filter-options d-flex align-items-center gap-3 flex-wrap">
+                            <div class="filter-dropdown">
+                                <select class="form-select form-select-sm">
+                                    <option>ARAÇ TİPİ</option>
+                                    <option>Ekonomik</option>
+                                    <option>Kompakt</option>
+                                    <option>SUV</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-toggle">
+                                <label class="form-label mb-0 me-2">SADECE OTOMATİK</label>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="otomatikSwitch">
+                                </div>
+                            </div>
+
+                            <div class="filter-dropdown">
+                                <select class="form-select form-select-sm">
+                                    <option>SÜRÜCÜ YAŞI 30+</option>
+                                    <option>18-25 yaş</option>
+                                    <option>25-30 yaş</option>
+                                    <option>30+ yaş</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-dropdown">
+                                <select class="form-select form-select-sm">
+                                    <option>MARKA</option>
+                                    <option>Fiat</option>
+                                    <option>Renault</option>
+                                    <option>Hyundai</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-dropdown">
+                                <select class="form-select form-select-sm">
+                                    <option>KOLTUK SAYISI 2</option>
+                                    <option>2 Koltuk</option>
+                                    <option>4 Koltuk</option>
+                                    <option>5+ Koltuk</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cars Grid -->
+            <div class="cars-grid-layout">
+                <div class="row g-3">
+                    <!-- Car Card 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Citroen C3</h6>
+                                <p class="car-description">
+                                    Citroen C3, Renault Clio, Citroen C-Elysee veya benzeri | Binek<br>
+                                    Manuel | Benzin
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Citroen+C3"
+                                    alt="Citroen C3" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">1.473</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">1.473 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Fiat Egea Sedan</h6>
+                                <p class="car-description">
+                                    Fiat Egea Sedan, Fiat Egea Cross veya benzeri | Binek<br>
+                                    Manuel | Benzin
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Fiat+Egea"
+                                    alt="Fiat Egea" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">1.490</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">1.490 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Fiat Fiorino</h6>
+                                <p class="car-description">
+                                    Fiat Fiorino veya benzeri | Binek<br>
+                                    Manuel | Dizel
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Fiat+Fiorino"
+                                    alt="Fiat Fiorino" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">1.534</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">1.534 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Fiat Egea Sedan</h6>
+                                <p class="car-description">
+                                    Fiat Egea Sedan veya benzeri | Binek<br>
+                                    Manuel | Dizel
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Fiat+Egea"
+                                    alt="Fiat Egea" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">1.534</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">1.534 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 5 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Renault Clio</h6>
+                                <p class="car-description">
+                                    Renault Clio, Opel Corsa, Hyundai i20 veya benzeri | Binek<br>
+                                    Otomatik | Benzin
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Renault+Clio"
+                                    alt="Renault Clio" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">1.561</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">1.561 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 6 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Fiat Egea Sedan</h6>
+                                <p class="car-description">
+                                    Fiat Egea Sedan, Fiat Egea Cross veya benzeri | Binek<br>
+                                    Otomatik | Dizel
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Fiat+Egea"
+                                    alt="Fiat Egea" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">1.710</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">1.710 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 7 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Hyundai Bayon</h6>
+                                <p class="car-description">
+                                    Hyundai Bayon veya benzeri | Suv<br>
+                                    Otomatik | Benzin
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Hyundai+Bayon"
+                                    alt="Hyundai Bayon" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">1.895</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">1.895 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 8 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="car-card-grid">
+                            <div class="car-header">
+                                <h6 class="car-name">Renault Megane Sedan</h6>
+                                <p class="car-description">
+                                    Renault Megane Sedan veya benzeri | Binek<br>
+                                    Otomatik | Benzin
+                                </p>
+                            </div>
+                            <div class="car-image-wrapper">
+                                <img src="https://via.placeholder.com/250x150/6c757d/ffffff?text=Renault+Megane"
+                                    alt="Renault Megane" class="car-img">
+                            </div>
+                            <div class="car-price-section">
+                                <div class="price-display">
+                                    <span class="price-main">2.104</span>
+                                    <span class="price-currency">TL</span>
+                                    <span class="price-period">günlük</span>
+                                </div>
+                                <div class="price-total">2.104 TL Toplam</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- More cars can be added here... -->
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Araç listesi sayfalama" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-car-front-fill text-primary"></i>
+                        RentCar
+                    </h5>
+                    <p class="text-muted">
+                        Türkiye'nin en güvenilir araç kiralama platformu.
+                        Hayalinizdeki seyahati gerçekleştirin.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="mb-3">Hızlı Bağlantılar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Ana Sayfa</a></li>
+                        <li><a href="#" class="text-muted">Araç Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Hakkımızda</a></li>
+                        <li><a href="#" class="text-muted">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">Hizmetler</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted">Günlük Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Aylık Kiralama</a></li>
+                        <li><a href="#" class="text-muted">Kurumsal Çözümler</a></li>
+                        <li><a href="#" class="text-muted">Güvence Paketleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-3">İletişim</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="bi bi-telephone"></i> +90 352 123 45 67</li>
+                        <li><i class="bi bi-envelope"></i> info@rentcar.com</li>
+                        <li><i class="bi bi-geo-alt"></i> Kayseri, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 RentCar. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-muted me-3">Gizlilik Politikası</a>
+                    <a href="#" class="text-muted">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
