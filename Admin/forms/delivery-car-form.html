@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCar Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <!-- Main Content - Araç Teslim Formu -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="content-area">
+                <!-- Delivery Header -->
+                <div class="delivery-header">
+                    <div class="delivery-header-content">
+                        <div class="delivery-logo">
+                            <i class="bi bi-car-front-fill"></i>
+                            <span>RentCar</span>
+                        </div>
+                        <div class="delivery-title">
+                            <h2>ARAÇ TESLİM FORMU</h2>
+                            <p>Rezervasyon No: <strong>RSV-2025-0012487</strong></p>
+                        </div>
+                        <div class="delivery-date">
+                            <div class="date-info">
+                                <span class="date-label">Teslim Tarihi:</span>
+                                <span class="date-value">20 Haziran 2025, 10:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Form Content -->
+                <div class="delivery-form-content">
+                    <div class="row g-4">
+                        <!-- Sol Kolon -->
+                        <div class="col-lg-6">
+                            <!-- Müşteri Bilgileri -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-person me-2"></i>Müşteri Bilgileri</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="customer-info-grid">
+                                        <div class="info-item">
+                                            <label>Ad Soyad:</label>
+                                            <span>Mehmet Yılmaz</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>TC Kimlik:</label>
+                                            <span>12345678901</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Telefon:</label>
+                                            <span>+90 532 123 45 67</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Ehliyet No:</label>
+                                            <span>ABC123456789</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Araç Bilgileri -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-car-front me-2"></i>Araç Bilgileri</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="vehicle-info-grid">
+                                        <div class="info-item">
+                                            <label>Marka Model:</label>
+                                            <span>BMW 320i</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Plaka:</label>
+                                            <span>38 ABC 123</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Model Yılı:</label>
+                                            <span>2023</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Renk:</label>
+                                            <span>Alpine White</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Kilometre:</label>
+                                            <span class="km-display">
+                                                <input type="number" class="km-input" value="45280" readonly> km
+                                            </span>
+                                        </div>
+                                        <div class="info-item">
+                                            <label>Yakıt Seviyesi:</label>
+                                            <span class="fuel-display">
+                                                <div class="fuel-gauge">
+                                                    <div class="fuel-level" style="width: 100%"></div>
+                                                </div>
+                                                <span>Full</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Araç Malzemeleri -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-list-check me-2"></i>Araç Malzemeleri</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="equipment-checklist">
+                                        <div class="checklist-grid">
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="spare-tire" checked>
+                                                <label for="spare-tire">
+                                                    <i class="bi bi-circle"></i>
+                                                    <span>Stepne Lastik</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="jack" checked>
+                                                <label for="jack">
+                                                    <i class="bi bi-tools"></i>
+                                                    <span>Kriko</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="triangle" checked>
+                                                <label for="triangle">
+                                                    <i class="bi bi-triangle"></i>
+                                                    <span>Reflektör Üçgen</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="first-aid" checked>
+                                                <label for="first-aid">
+                                                    <i class="bi bi-heart-pulse"></i>
+                                                    <span>İlk Yardım Çantası</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="fire-extinguisher" checked>
+                                                <label for="fire-extinguisher">
+                                                    <i class="bi bi-fire"></i>
+                                                    <span>Yangın Söndürücü</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="cable" checked>
+                                                <label for="cable">
+                                                    <i class="bi bi-outlet"></i>
+                                                    <span>Takviye Kablosu</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="documents" checked>
+                                                <label for="documents">
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                    <span>Araç Evrakları</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="keys" checked>
+                                                <label for="keys">
+                                                    <i class="bi bi-key"></i>
+                                                    <span>Yedek Anahtar</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="manual" checked>
+                                                <label for="manual">
+                                                    <i class="bi bi-book"></i>
+                                                    <span>Kullanım Kılavuzu</span>
+                                                </label>
+                                            </div>
+                                            <div class="checklist-item">
+                                                <input type="checkbox" id="charger" checked>
+                                                <label for="charger">
+                                                    <i class="bi bi-phone"></i>
+                                                    <span>Telefon Şarj Aleti</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Araç Teslim Öncesi Fotoğrafları -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-camera me-2"></i>Araç Teslim Öncesi Fotoğrafları</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="photo-upload-area">
+                                        <!-- Fotoğraf Yükleme Butonu -->
+                                        <div class="upload-controls">
+                                            <div class="upload-info">
+                                                <small class="text-muted">
+                                                    <i class="bi bi-info-circle me-1"></i>
+                                                    Araç tesliminden önce fotoğraflarını çekiniz. (Maks. 10 MB,
+                                                    JPG/PNG)
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        <!-- Fotoğraf Kategorileri -->
+                                        <div class="photo-categories">
+                                            <div class="category-tabs">
+                                                <button type="button" class="category-tab active" data-category="genel"
+                                                    onclick="switchCategory('genel')">
+                                                    <i class="bi bi-car-front me-1"></i>Genel Görünüm
+                                                </button>
+                                                <button type="button" class="category-tab" data-category="hasar"
+                                                    onclick="switchCategory('hasar')">
+                                                    <i class="bi bi-exclamation-triangle me-1"></i>Hasar Fotoğrafları
+                                                </button>
+                                                <button type="button" class="category-tab" data-category="ic-mekan"
+                                                    onclick="switchCategory('ic-mekan')">
+                                                    <i class="bi bi-house-door me-1"></i>İç Mekan
+                                                </button>
+                                                <button type="button" class="category-tab" data-category="kilometre"
+                                                    onclick="switchCategory('kilometre')">
+                                                    <i class="bi bi-speedometer me-1"></i>Kilometre/Yakıt
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Fotoğraf Galerisi -->
+                                        <div class="photo-gallery" id="photoGallery">
+                                            <!-- Genel Görünüm Kategorisi -->
+                                            <div class="photo-category-content active" id="category-genel">
+                                                <div class="photo-grid">
+                                                    <!-- Örnek Fotoğraflar -->
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=300&h=200&fit=crop"
+                                                                alt="Araç Ön Görünüm">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Ön Görünüm</span>
+                                                            <small class="photo-time">14:32</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=300&h=200&fit=crop"
+                                                                alt="Araç Arka Görünüm">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Arka Görünüm</span>
+                                                            <small class="photo-time">14:33</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=300&h=200&fit=crop"
+                                                                alt="Araç Sol Yan">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Sol Yan</span>
+                                                            <small class="photo-time">14:34</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=300&h=200&fit=crop"
+                                                                alt="Araç Sol Yan">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Sağ Yan</span>
+                                                            <small class="photo-time">14:34</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Fotoğraf Ekleme Kartı -->
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>Fotoğraf Ekle</span>
+                                                        </div>
+                                                        <div class="photo-overlay">
+                                                            <div class="photo-actions">
+                                                                <button type="button" class="btn btn-sm btn-light"
+                                                                    onclick="viewPhoto(this)" title="Kamera">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-light"
+                                                                    onclick="viewPhoto(this)" title="Yükle">
+                                                                    <i class="bi bi-upload"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-light"
+                                                                    onclick="viewPhoto(this)" title="Büyüt">
+                                                                    <i class="bi bi-eye"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-danger"
+                                                                    onclick="deletePhoto(this)" title="Sil">
+                                                                    <i class="bi bi-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Hasar Fotoğrafları Kategorisi -->
+                                            <div class="photo-category-content" id="category-hasar">
+                                                <div class="photo-grid">
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>Hasar Fotoğrafı Ekle</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- İç Mekan Kategorisi -->
+                                            <div class="photo-category-content" id="category-ic-mekan">
+                                                <div class="photo-grid">
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1484136063621-1acbc3b4ec98?w=300&h=200&fit=crop"
+                                                                alt="Araç İç Mekan">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Kokpit Görünümü</span>
+                                                            <small class="photo-time">14:35</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>İç Mekan Fotoğrafı Ekle</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Kilometre/Yakıt Kategorisi -->
+                                            <div class="photo-category-content" id="category-kilometre">
+                                                <div class="photo-grid">
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>Kilometre Fotoğrafı Ekle</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Fotoğraf Özeti -->
+                                        <div class="photo-summary">
+                                            <div class="summary-stats">
+                                                <div class="stat-item">
+                                                    <i class="bi bi-images text-primary"></i>
+                                                    <span class="stat-number" id="totalPhotos">4</span>
+                                                    <span class="stat-label">Toplam Fotoğraf</span>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <i class="bi bi-cloud-arrow-up text-success"></i>
+                                                    <span class="stat-number" id="uploadedPhotos">4</span>
+                                                    <span class="stat-label">Yüklendi</span>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <i class="bi bi-hdd text-info"></i>
+                                                    <span class="stat-number" id="totalSize">2.4</span>
+                                                    <span class="stat-label">MB</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Araç İadesi Sırasındaki Fotoğraflar -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-camera me-2"></i>Araç İadesi Sırasındaki Fotoğraflar </h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="photo-upload-area">
+                                        <!-- Fotoğraf Yükleme Butonu -->
+                                        <div class="upload-controls">
+                                            <div class="upload-info">
+                                                <small class="text-muted">
+                                                    <i class="bi bi-info-circle me-1"></i>
+                                                    Aracı iade almadan önce fotoğraflarını çekiniz. (Maks. 10 MB,
+                                                    JPG/PNG)
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        <!-- Fotoğraf Kategorileri -->
+                                        <div class="photo-categories">
+                                            <div class="category-tabs">
+                                                <button type="button" class="category-tab active" data-category="genel"
+                                                    onclick="switchCategory('genel')">
+                                                    <i class="bi bi-car-front me-1"></i>Genel Görünüm
+                                                </button>
+                                                <button type="button" class="category-tab" data-category="hasar"
+                                                    onclick="switchCategory('hasar')">
+                                                    <i class="bi bi-exclamation-triangle me-1"></i>Hasar Fotoğrafları
+                                                </button>
+                                                <button type="button" class="category-tab" data-category="ic-mekan"
+                                                    onclick="switchCategory('ic-mekan')">
+                                                    <i class="bi bi-house-door me-1"></i>İç Mekan
+                                                </button>
+                                                <button type="button" class="category-tab" data-category="kilometre"
+                                                    onclick="switchCategory('kilometre')">
+                                                    <i class="bi bi-speedometer me-1"></i>Kilometre/Yakıt
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Fotoğraf Galerisi -->
+                                        <div class="photo-gallery" id="photoGallery">
+                                            <!-- Genel Görünüm Kategorisi -->
+                                            <div class="photo-category-content active" id="category-genel">
+                                                <div class="photo-grid">
+                                                    <!-- Örnek Fotoğraflar -->
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=300&h=200&fit=crop"
+                                                                alt="Araç Ön Görünüm">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Ön Görünüm</span>
+                                                            <small class="photo-time">14:32</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=300&h=200&fit=crop"
+                                                                alt="Araç Arka Görünüm">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Arka Görünüm</span>
+                                                            <small class="photo-time">14:33</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=300&h=200&fit=crop"
+                                                                alt="Araç Sol Yan">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Sol Yan</span>
+                                                            <small class="photo-time">14:34</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=300&h=200&fit=crop"
+                                                                alt="Araç Sol Yan">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Kamera">
+                                                                        <i class="bi bi-camera"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Yükle">
+                                                                        <i class="bi bi-upload"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Araç Sağ Yan</span>
+                                                            <small class="photo-time">14:34</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Fotoğraf Ekleme Kartı -->
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>Fotoğraf Ekle</span>
+                                                        </div>
+                                                        <div class="photo-overlay">
+                                                            <div class="photo-actions">
+                                                                <button type="button" class="btn btn-sm btn-light"
+                                                                    onclick="viewPhoto(this)" title="Kamera">
+                                                                    <i class="bi bi-camera"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-light"
+                                                                    onclick="viewPhoto(this)" title="Yükle">
+                                                                    <i class="bi bi-upload"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-light"
+                                                                    onclick="viewPhoto(this)" title="Büyüt">
+                                                                    <i class="bi bi-eye"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-danger"
+                                                                    onclick="deletePhoto(this)" title="Sil">
+                                                                    <i class="bi bi-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Hasar Fotoğrafları Kategorisi -->
+                                            <div class="photo-category-content" id="category-hasar">
+                                                <div class="photo-grid">
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>Hasar Fotoğrafı Ekle</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- İç Mekan Kategorisi -->
+                                            <div class="photo-category-content" id="category-ic-mekan">
+                                                <div class="photo-grid">
+                                                    <div class="photo-item">
+                                                        <div class="photo-wrapper">
+                                                            <img src="https://images.unsplash.com/photo-1484136063621-1acbc3b4ec98?w=300&h=200&fit=crop"
+                                                                alt="Araç İç Mekan">
+                                                            <div class="photo-overlay">
+                                                                <div class="photo-actions">
+                                                                    <button type="button" class="btn btn-sm btn-light"
+                                                                        onclick="viewPhoto(this)" title="Büyüt">
+                                                                        <i class="bi bi-eye"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                                        onclick="deletePhoto(this)" title="Sil">
+                                                                        <i class="bi bi-trash"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="photo-info">
+                                                            <span class="photo-title">Kokpit Görünümü</span>
+                                                            <small class="photo-time">14:35</small>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>İç Mekan Fotoğrafı Ekle</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Kilometre/Yakıt Kategorisi -->
+                                            <div class="photo-category-content" id="category-kilometre">
+                                                <div class="photo-grid">
+                                                    <div class="photo-item add-photo" onclick="triggerFileInput()">
+                                                        <div class="add-photo-content">
+                                                            <i class="bi bi-plus-circle"></i>
+                                                            <span>Kilometre Fotoğrafı Ekle</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Fotoğraf Özeti -->
+                                        <div class="photo-summary">
+                                            <div class="summary-stats">
+                                                <div class="stat-item">
+                                                    <i class="bi bi-images text-primary"></i>
+                                                    <span class="stat-number" id="totalPhotos">4</span>
+                                                    <span class="stat-label">Toplam Fotoğraf</span>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <i class="bi bi-cloud-arrow-up text-success"></i>
+                                                    <span class="stat-number" id="uploadedPhotos">4</span>
+                                                    <span class="stat-label">Yüklendi</span>
+                                                </div>
+                                                <div class="stat-item">
+                                                    <i class="bi bi-hdd text-info"></i>
+                                                    <span class="stat-number" id="totalSize">2.4</span>
+                                                    <span class="stat-label">MB</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fotoğraf Görüntüleme Modal -->
+                            <div class="modal fade" id="photoViewModal" tabindex="-1">
+                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="photoModalTitle">Fotoğraf Görüntüle</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body text-center">
+                                            <img id="photoModalImage" src="" alt="" class="img-fluid">
+                                            <div class="photo-details mt-3">
+                                                <p class="mb-1"><strong>Çekim Zamanı:</strong> <span
+                                                        id="photoModalTime"></span></p>
+                                                <p class="mb-0"><strong>Kategori:</strong> <span
+                                                        id="photoModalCategory"></span></p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-danger"
+                                                onclick="deleteCurrentPhoto()">
+                                                <i class="bi bi-trash me-2"></i>Sil
+                                            </button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Kapat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sağ Kolon -->
+                        <div class="col-lg-6">
+                            <!-- Hasar Tespiti -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-exclamation-triangle me-2"></i>Hasar Tespiti</h5>
+                                </div>
+                                <div class="section-content">
+                                    <!-- Araç Diyagramı -->
+                                    <div class="vehicle-diagram">
+                                        <div class="diagram-container">
+                                            <img src="https://otokarnavali.com/Content/ekspertiz-araci.gif" alt="">
+                                        </div>
+                                    </div>
+
+                                    <!-- Hasar Listesi -->
+                                    <div class="damage-list">
+                                        <div class="damage-types">
+                                            <label class="damage-type">
+                                                <input type="radio" name="damageType" value="minor">
+                                                <span class="damage-color minor"></span>
+                                                Küçük Çizik
+                                            </label>
+                                            <label class="damage-type">
+                                                <input type="radio" name="damageType" value="major">
+                                                <span class="damage-color major"></span>
+                                                Büyük Hasar
+                                            </label>
+                                            <label class="damage-type">
+                                                <input type="radio" name="damageType" value="dent">
+                                                <span class="damage-color dent"></span>
+                                                Kritik Hasar
+                                            </label>
+                                        </div>
+
+                                        <!-- Hasar Ekleme Formu -->
+                                        <div class="damage-add-form mb-2">
+                                            <h6>Yeni Hasar Ekle:</h6>
+                                            <div class="add-damage-controls">
+                                                <div class="row g-2">
+                                                    <div class="col-md-4">
+                                                        <select class="form-control" id="damageLocation">
+                                                            <option>Küçük Çizik</option>
+                                                            <option>Büyük Hasar</option>
+                                                            <option>Kritik Hasar</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control"
+                                                            id="damageDescription"
+                                                            placeholder="Hasar açıklaması (opsiyonel)" maxlength="100">
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <button type="button" class="btn btn-primary btn-sm w-100 h-100">
+                                                            <i class="bi bi-plus-circle me-1" style="font-size: 1.7rem;"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="selected-damages">
+                                            <h6>Tespit Edilen Hasarlar:</h6>
+                                            <ul id="damagesList">
+                                                <li class="no-damage">Hasar bulunmamaktadır.</li>
+                                                <!-- Emoji Versiyonları -->
+                                                <li class="minor-damage">Sol ön kapıda küçük çizik</li>
+                                                <li class="major-damage">Arka tamponda büyük hasar</li>
+                                                <li class="critical-damage">Motor kaputunda kritik hasar</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ek Notlar -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-sticky me-2"></i>Ek Notlar ve Açıklamalar</h5>
+                                </div>
+                                <div class="section-content">
+                                    <textarea class="form-control delivery-notes" rows="4"
+                                        placeholder="Araç durumu, eksik malzemeler, özel durumlar vb. notlarınızı buraya yazınız..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- İmza Alanları -->
+                            <div class="delivery-section">
+                                <div class="section-header">
+                                    <h5><i class="bi bi-pencil me-2"></i>İmza ve Onay</h5>
+                                </div>
+                                <div class="section-content">
+                                    <div class="signature-area">
+                                        <div class="signature-grid">
+                                            <div class="signature-box">
+                                                <div class="signature-canvas" id="customerSignature">
+                                                    <div class="signature-placeholder">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                        <span>Müşteri İmzası</span>
+                                                    </div>
+                                                </div>
+                                                <div class="signature-info">
+                                                    <strong>Mehmet Yılmaz</strong>
+                                                    <span>Müşteri</span>
+                                                    <span class="signature-date" id="customerDate"></span>
+                                                </div>
+                                                <div class="signature-actions">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary"
+                                                        onclick="clearSignature('customer')">
+                                                        <i class="bi bi-eraser"></i> Temizle
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Onay Metni -->
+                                        <div class="approval-text">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="customerApproval"
+                                                    required>
+                                                <label class="form-check-label" for="customerApproval">
+                                                    Müşteri olarak, aracı yukarıda belirtilen durumda teslim aldığımı,
+                                                    araçtaki tüm malzemelerin kontrolünü yaptığımı ve herhangi bir
+                                                    eksiklik bulunmadığını onaylıyorum.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="delivery-actions">
+                        <div class="actions-container">
+                            <div class="actions-left">
+                                <button type="button" class="btn btn-outline-secondary">
+                                    <i class="bi bi-printer me-2"></i>Yazdır
+                                </button>
+                            </div>
+                            <div class="actions-right">
+                                <button type="button" class="btn btn-outline-danger">
+                                    <i class="bi bi-x-circle me-2"></i>İptal
+                                </button>
+                                <button type="button" class="btn btn-success btn-lg">
+                                    <i class="bi bi-check-circle me-2"></i>Teslimi Tamamla
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
